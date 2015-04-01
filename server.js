@@ -4,7 +4,7 @@ var application_root = __dirname,
     path             = require('path'),
     logger           = require('morgan'),
     models           = require('./models');
-    // environment      = require('dotenv');
+    environment      = require('dotenv');
     Jobpost          = models.job_posts,
     Employer         = models.employers,
     Position         = models.positions;
@@ -18,6 +18,8 @@ app.use( bodyParser() );
 app.use( express.static( path.join( application_root, 'public' )));
 app.use( express.static( path.join( application_root, 'browser' )));
 
+//process.env.GLASSDOOR_KEY; wherever an API key is needed
+environment.load();
 
 // Routes
 //Get all the Jobs
