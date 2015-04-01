@@ -4,7 +4,7 @@ var application_root = __dirname,
     path             = require('path'),
     logger           = require('morgan'),
     models           = require('./models');
-    environment      = require('dotenv');
+    // environment      = require('dotenv');
     Jobpost          = models.job_posts,
     Employer         = models.employers,
     Position         = models.positions;
@@ -18,8 +18,6 @@ app.use( bodyParser() );
 app.use( express.static( path.join( application_root, 'public' )));
 app.use( express.static( path.join( application_root, 'browser' )));
 
-//process.env.GLASSDOOR_KEY; wherever an API key is needed
-environment.load();
 
 // Routes
 //Get all the Jobs
@@ -35,11 +33,11 @@ app.get('/job_posts', function(req, res) {
 app.get('/job_posts/:id', function(req, res) {
   Jobpost
     .findOne({
-      where: { id: req.params.id},
+      where: { id: req.params.id },
       include: [
       { model: Employer },
       { model: Position },
-      ]
+      ]})
       .then(function(jobpost) {
         res.send(jobpost);
       });
@@ -63,7 +61,7 @@ app.put('/job_posts/:id', function(req, res) {
       include: [
       { model: Employer },
       { model: Position },
-      ]
+      ]})
       .then(function(jobpost) {
         res.send(jobpost);
       });
@@ -215,7 +213,9 @@ app.delete('/positions/:id', function(req, res) {
 });
 
 
+app.listen(3000, function() {
+  console.log('Server running on 3000...')
+});
 
-
-// Export app as module
-module.exports = app;
+// // Export app as module
+// module.exports = app;

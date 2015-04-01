@@ -13,7 +13,7 @@ module.exports = function(sequelize, DataTypes) {
       post_id: DataTypes.INTEGER,
       location: DataTypes.STRING,
       is_entry: DataTypes.BOOLEAN,
-      levlels: DataTypes.STRING,
+      levels: DataTypes.STRING,
       employer_id: DataTypes.INTEGER,
 }, {
 
