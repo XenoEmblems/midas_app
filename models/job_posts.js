@@ -1,6 +1,6 @@
 "use strict";
 module.exports = function(sequelize, DataTypes) {
-  var job_posts = sequelize.define('job_posts', {
+  var jobPosts = sequelize.define('job_posts', {
       job_title: DataTypes.STRING,
       position_id: DataTypes.INTEGER,
       post_url: DataTypes.STRING,
