@@ -20,9 +20,10 @@ module.exports = function(sequelize, DataTypes) {
 
   classMethods: {
       associate: function(models) {
-        // associations can be defined here
-      }
+      job_posts.belongsTo(models.positions, { foreignKey: 'position_id' });
+      job_posts.belongsTo(models.employers, { foreignKey: 'employer_id' });
     }
-  });
+  }
+});
   return job_posts;
 };
