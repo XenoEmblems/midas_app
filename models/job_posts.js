@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
       employer_id: DataTypes.INTEGER,
 }, {
 
-  timestamps: false,
+  timestamps: true,
 
   classMethods: {
       associate: function(models) {
