@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
       location: DataTypes.STRING,
       is_entry: DataTypes.BOOLEAN,
       level: DataTypes.STRING,
-      employer_id: DataTypes.INTEGER,
+      employer_id: DataTypes.INTEGER
 }, {
 
   timestamps: true,

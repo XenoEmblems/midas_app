@@ -43,11 +43,10 @@ app.get('/job_posts/:id', function(req, res) {
       include: [
       { model: Employer },
       { model: Position },
-      ]
+    ]})
       .then(function(jobpost) {
         res.send(jobpost);
-       })
-    });
+       });
 });
 
 //Create the Jobs
@@ -67,10 +66,13 @@ app.put('/job_posts/:id', function(req, res) {
       include: [
       { model: Employer },
       { model: Position },
-      ]
+    ]})
       .then(function(jobpost) {
-        res.send(jobpost);
-      })
+        jobpost
+          .update(req.body)
+          .then(function(updatedPost){
+          res.send(updatedPost);
+      });
     });
 });
 
