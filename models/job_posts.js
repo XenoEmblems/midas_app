@@ -2,7 +2,7 @@
 module.exports = function(sequelize, DataTypes) {
   var job_posts = sequelize.define('job_posts', {
       job_title: DataTypes.STRING,
-      position: DataTypes.STRING,
+      position_id: DataTypes.INTEGER,
       post_url: DataTypes.STRING,
       post_content: DataTypes.TEXT,
       job_ID: DataTypes.INTEGER,
