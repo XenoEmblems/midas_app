@@ -4,14 +4,18 @@ var application_root = __dirname,
     path             = require('path'),
     logger           = require('morgan'),
     models           = require('./models');
+    environment      = require('dotenv');
+
 
 var app = express();
 
 // Server Configuration
 app.use(logger('dev'));
 app.use( bodyParser() );
-app.use( express.static( path.join( application_root, 'public' )))
-app.use( express.static( path.join( application_root, 'browser' )))
+app.use( express.static( path.join( application_root, 'public' )));
+app.use( express.static( path.join( application_root, 'browser' )));
+app.use(environment.load());
+
 
 // Routes
 
