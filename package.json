@@ -17,5 +17,16 @@
   },
   "scripts": {
     "start": "./bin/www"
-  }
+  },
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wbarbee/midas_app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wbarbee/midas_app/issues"
+  },
+  "homepage": "https://github.com/wbarbee/midas_app"
 }
