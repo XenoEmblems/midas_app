@@ -12,8 +12,8 @@ module.exports = {
       job_title: {
         DataTypes.STRING,
       },
-      position: {
-        DataTypes.STRING,
+      position_id: {
+        DataTypes.INTEGER,
       },
       post_url: {
         DataTypes.STRING,
