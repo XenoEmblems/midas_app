@@ -8,7 +8,7 @@ var application_root = __dirname,
     Jobpost          = models.job_posts,
     Employer         = models.employers,
     Position         = models.positions;
-    
+
 
 var app = express();
 
@@ -17,7 +17,9 @@ app.use(logger('dev'));
 app.use( bodyParser() );
 app.use( express.static( path.join( application_root, 'public' )));
 app.use( express.static( path.join( application_root, 'browser' )));
-app.use(environment.load());
+
+//process.env.GLASSDOOR_KEY; wherever an API key is needed
+environment.load();
 
 // Routes
 //Get all the Jobs
@@ -27,7 +29,6 @@ app.get('/job_posts', function(req, res) {
     .then(function(jobposts) {
       res.send(jobposts);
     });
-
 
 });
 //Read the Jobs
@@ -42,6 +43,7 @@ app.get('/job_posts/:id', function(req, res) {
       .then(function(jobpost) {
         res.send(jobpost);
       });
+    });
 });
 
 //Create the Jobs
@@ -63,7 +65,8 @@ app.put('/job_posts/:id', function(req, res) {
       { model: Position },
       ]
       .then(function(jobpost) {
-        res.send(jobpost); 
+        res.send(jobpost);
+      });
     });
 });
 
@@ -183,6 +186,8 @@ app.post('/job_posts/:id/positions', function(req, res) {
 });
 
 //Update the Positions
+
+
 
 app.put('/positions/:id', function(req, res) {
   Position
