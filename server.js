@@ -210,9 +210,7 @@ app.delete('/positions/:id', function(req, res) {
 });
 
 
-app.listen(3000, function() {
-  console.log('Server running on 3000...')
-});
 
-// // Export app as module
-// module.exports = app;
+
+// Export app as module
+module.exports = app;
