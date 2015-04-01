@@ -208,5 +208,5 @@ app.delete('/positions/:id', function(req, res) {
 
 
 
-// Export app as module
+// Export app as modules
 module.exports = app;
