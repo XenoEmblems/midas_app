@@ -6,10 +6,15 @@ var application_root = __dirname,
     models           = require('./models'),
     Jobpost          = models.job_posts,
     Employer         = models.employers,
-    Position         = models.positions;
+    Position         = models.positions,
+    feedGetter       = require('./feeds');
 
 
 var app = express();
+
+// testing feedGetter
+
+feedGetter.test_craig();
 
 // Server Configuration
 app.use(logger('dev'));
