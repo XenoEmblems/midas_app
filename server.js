@@ -4,9 +4,11 @@ var application_root = __dirname,
     path             = require('path'),
     logger           = require('morgan'),
     models           = require('./models');
+    environment      = require('dotenv');
     Jobpost          = models.job_posts,
     Employer         = models.employers,
     Position         = models.positions;
+    
 
 var app = express();
 
@@ -15,6 +17,7 @@ app.use(logger('dev'));
 app.use( bodyParser() );
 app.use( express.static( path.join( application_root, 'public' )));
 app.use( express.static( path.join( application_root, 'browser' )));
+app.use(environment.load());
 
 // Routes
 //Get all the Jobs
@@ -208,5 +211,6 @@ app.delete('/positions/:id', function(req, res) {
 
 
 
-// Export app as modules
+
+// Export app as module
 module.exports = app;
