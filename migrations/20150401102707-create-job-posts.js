@@ -47,10 +47,10 @@ module.exports = {
       },
       level: {
         DataTypes.STRING
-      }
+      },
       employer_id: {
         DataTypes.INTEGER
-      },
+      }
     }).done(done);
   },
 
