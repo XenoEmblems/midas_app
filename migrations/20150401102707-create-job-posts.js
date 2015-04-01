@@ -16,7 +16,7 @@ module.exports = {
         DataTypes.INTEGER
       },
       post_url: {
-        DataTypes.STRING,
+        DataTypes.STRING
       },
       post_content: {
         DataTypes.TEXT
