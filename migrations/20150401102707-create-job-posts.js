@@ -10,44 +10,47 @@ module.exports = {
         type: DataTypes.INTEGER
       },
       job_title: {
-        DataTypes.STRING,
+        DataTypes.STRING
       },
       position_id: {
-        DataTypes.INTEGER,
+        DataTypes.INTEGER
       },
       post_url: {
-        DataTypes.STRING,
+        DataTypes.STRING
       },
       post_content: {
-        DataTypes.TEXT,
+        DataTypes.TEXT
       },
       job_ID: {
-        DataTypes.STRING,
+        DataTypes.STRING
       },
       employer_name: {
-        DataTypes.STRING,
+        DataTypes.STRING
       },
       salary: {
-        DataTypes.STRING,
+        DataTypes.STRING
       },
       date_posted: {
-        DataTypes.STRING,
+        DataTypes.STRING
       },
       date_created: {
-        DataTypes.STRING,
+        DataTypes.STRING
       },
       post_id: {
-        DataTypes.INTEGER,
+        DataTypes.INTEGER
       },
       location: {
-        DataTypes.STRING,
+        DataTypes.STRING
       },
       is_entry: {
-        DataTypes.BOOLEAN,
+        DataTypes.BOOLEAN
+      },
+      level: {
+        DataTypes.STRING
       },
       employer_id: {
-        DataTypes.INTEGER,
-      },
+        DataTypes.INTEGER
+      }
     }).done(done);
   },
 
