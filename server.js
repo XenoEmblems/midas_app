@@ -38,10 +38,10 @@ app.get('/job_posts/:id', function(req, res) {
       include: [
       { model: Employer },
       { model: Position },
-      ]})
+      ]
       .then(function(jobpost) {
         res.send(jobpost);
-      });
+       })
     });
 });
 
@@ -62,10 +62,10 @@ app.put('/job_posts/:id', function(req, res) {
       include: [
       { model: Employer },
       { model: Position },
-      ]})
+      ]
       .then(function(jobpost) {
         res.send(jobpost);
-      });
+      })
     });
 });
 
