@@ -6,7 +6,9 @@ var request 		= require('request'),
 	bodyParser      = require('body-parser'),
 	xml2js			= require('xml2js'),
 	models          = require('../models'),
-	JobPost 		= models.jobPosts;
+	JobPost 		= models.jobPosts,
+	Employer 		= models.employers,
+	Position		= models.positions;
 
 module.exports =  {
 
