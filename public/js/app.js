@@ -7,4 +7,7 @@ var App = {
 
 $(function() {
 	console.log('Loaded, bro.');
+	App.jobPosts = App.Collections.JobPosts;
+	App.jobsView = App.Views.JobPostListView({ collection: App.jobPosts });
+	
 });

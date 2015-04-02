@@ -26,12 +26,40 @@ var request 	= require('request'),
 //			}
 
 
+<<<<<<< HEAD
+queryNode: function() {
+	request.get(museUrl, function(error, response, body) {
+		resultsArray = result[museUrl].item;
+		for (var i = 0; i < resultsArray.length, i++) {
+			var job = resultsArray[i];
+
+			var data = {
+				job_title: job.title,
+				position_id: ,
+				post_url: job.external_apply_link,
+				post_content: job.description,
+				job_ID: ,
+				employer_name: job.company_name,
+				salary: ,
+				date_posted: job.update_date,
+				date_created:job.creation_date,
+				post_id: job.id,
+				location: job.locations[0],
+				is_entry: , //boolean
+				level: job.level_displays[0],
+				employer_id:
+			};
+			JobPost.create(data);
+		});
+	});
+=======
 var queryParams = {
 	job_category: 'Engineering',
 	job_level: 'Entry Level',
 	job_location: 'New York City Metro Area',
 	page: 1
 }
+>>>>>>> 2187fe248f83fd427d7fe35e7e577a14e9eae516
 
 var baseUrl = 'http://www.themuse.com/api/v1/jobs/';
 
