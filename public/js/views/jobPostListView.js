@@ -3,6 +3,7 @@ App.Views.JobPostList = Backbone.View.extend ({
       el: '#main',
 
       intitialize: function() {
+        this.template = Handlebars.compile( $('#list-view-template').html() );
         this.listenTo(this.collection, 'reset', this.renderAll());
       },
 
@@ -15,7 +16,7 @@ App.Views.JobPostList = Backbone.View.extend ({
       },
 
       events: {
-    'click .show-more': 'showModal'
+        'click .show-more': 'showModal'
       },
 
       showModal: function(event) {
