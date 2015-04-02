@@ -2,9 +2,9 @@ App.Routers.JobPostRouter = Backbone.Router.extend({
 
   initialize: function() {
     console.log('New Job Post Router initialized');
-    // App.navigationView = new App.Views.NavigationView;
+    // App.navigationView = new App.Views.JobsNavigationView;
     App.jobPosts = new App.Collections.JobPosts;
-    App.posts.fetch();
+    App.jobPosts.fetch();
   },
 
   routes: {
@@ -16,13 +16,12 @@ App.Routers.JobPostRouter = Backbone.Router.extend({
     console.log('sup.');
   },
 
-  index: function() {
-    App.navigationView.showPosts();
-  },
+  // index: function() {
+  //   App.navigationView.showPosts();
+  // },
 
   show: function(id) {
-    App.navigationView.showPosts();
-    $('#' + id).click();
+
   }
 
 });
