@@ -1,0 +1,1 @@
+App.Models.Position = Backbone.Model.extend();
