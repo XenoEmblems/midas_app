@@ -12,9 +12,10 @@ var application_root = __dirname,
 
 var app = express();
 
-// testing feedGetter
 
-feedGetter.test_craig();
+//feedGetter.test_craig();
+feedGetter.test_muse();
+
 
 // Server Configuration
 app.use(logger('dev'));
