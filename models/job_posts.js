@@ -21,10 +21,10 @@ module.exports = function(sequelize, DataTypes) {
 
   classMethods: {
       associate: function(models) {
-      job_posts.belongsTo(models.positions, { foreignKey: 'position_id' });
-      job_posts.belongsTo(models.employers, { foreignKey: 'employer_id' });
+      jobPosts.belongsTo(models.positions, { foreignKey: 'position_id' });
+      jobPosts.belongsTo(models.employers, { foreignKey: 'employer_id' });
     }
   }
 });
-  return job_posts;
+  return jobPosts;
 };

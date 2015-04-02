@@ -37,7 +37,7 @@ app.get('/job_posts', function(req, res) {
 });
 //Read the Jobs
 app.get('/job_posts/:id', function(req, res) {
-  Jobpost
+  JobPost
     .findOne({
       where: { id: req.params.id },
       include: [
@@ -51,7 +51,7 @@ app.get('/job_posts/:id', function(req, res) {
 
 //Create the Jobs
 app.post('/job_posts', function(req, res) {
-  Jobpost
+  JobPost
     .create(req.body)
     .then(function(newPost) {
       res.send(newPost);
@@ -60,7 +60,7 @@ app.post('/job_posts', function(req, res) {
 
 //Update the Jobs
 app.put('/job_posts/:id', function(req, res) {
-  Jobpost
+  JobPost
     .findOne({
       where: { id: req.params.id },
       include: [
@@ -78,7 +78,7 @@ app.put('/job_posts/:id', function(req, res) {
 
 //Delete the Jobs
 app.delete('/job_posts/:id', function(req, res) {
-  Jobpost
+  JobPost
     .findOne(req.params.id)
     .then(function(jobpost) {
       jobpost
@@ -109,7 +109,7 @@ app.get('/employers/:id', function(req, res) {
 
 //Create the Employer
 app.post('/job_posts/:id/employers', function(req, res) {
-  Jobpost
+  JobPost
     .findOne(req.params.id)
     .then(function(jobpost){
       Employer
@@ -176,7 +176,7 @@ app.get('/positions/:id', function(req, res) {
 //Create the Positions
 
 app.post('/job_posts/:id/positions', function(req, res) {
-  Jobpost
+  JobPost
     .findOne(req.params.id)
     .then(function(jobpost){
       Position
