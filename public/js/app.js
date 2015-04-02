@@ -7,7 +7,7 @@ var App = {
 
 $(function() {
 	console.log('Loaded, bro.');
-	App.jobPosts = App.Collections.JobPosts;
-	App.jobsView = App.Views.JobPostList({ collection: App.jobPosts });
-	App.router= new App.Routers.JobPostRouter();
+	App.jobPosts = new App.Collections.JobPosts();
+	App.jobsView = new App.Views.JobPostList({ collection: App.jobPosts });
+	App.router = new App.Routers.JobPostRouter();
 });
