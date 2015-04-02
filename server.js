@@ -7,14 +7,16 @@ var application_root = __dirname,
     JobPost          = models.job_posts,
     Employer         = models.employers,
     Position         = models.positions,
-    feedGetter       = require('./feeds');  //feedGetter.craigslist 
+    feeds            = require('./feeds');  //feedGetter.craigslist 
 
 
 var app = express();
 
 
-//feedGetter.test_craig();
-feedGetter.test_muse();
+//feeds.test_craig();
+//feeds.test_muse();
+feeds.getPosition('Web Developer');
+feeds.getEmployer('Google');
 
 
 // Server Configuration
