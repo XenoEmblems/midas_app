@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>midas_app</title>
+  <script src='bundle.js'></script>
+  <script src='js/app.js'></script>
+  <script src='js/models/'
+  <script src='js/views/employer_modal_view.js'></script>
+  <script src='js/views/employer_modal_view.js'></script>
+
+</head>
+<body>
+  <h1>AW YEAH MIDAS!!</h1>
+
+
+  <template id="employer_modal_view">
+    <div class="employer" data-id="{{id}}">
+      <h1>Company Name: {{company_name}}</h1>
+      <h3>Company Link: {{company_url}}</h3>
+      <img src="{{company_logo}}">
+      <input type="hidden" value="{{glassdoor_id}}" id="glassdoor-id">
+      <h3>Rating: {{glassdoor_rating}}</h3>
+      <img src="glassdoorlogo">
+      <h6 class="delete" data-id="{{id}}">Delete</h6>
+    </div>
+  </template>
+  
+  <template id="position_modal_view">
+    <div class="position" data-id="{{id}}">
+      <h1>Position: {{name}}</h1>
+      <h3>Pay Low: {{pay_low}}</h3>
+      <h3>Pay Median: {{pay_median}}</h3>
+      <h3>Pay High: {{pay_high}}</h3>
+      <h6 class="delete" data-id="{{id}}">Delete</h6>
+    </div>
+  </template>
+
+</body>
+</html>

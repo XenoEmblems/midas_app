@@ -1,1 +1,1 @@
-//THIS WORKS?
+App.Models.Employer = Backbone.Model.extend();
