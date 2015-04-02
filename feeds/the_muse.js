@@ -32,7 +32,6 @@ var queryParams = {
 	job_location: 'New York City Metro Area',
 	page: 1
 }
->>>>>>> 2187fe248f83fd427d7fe35e7e577a14e9eae516
 
 var baseUrl = 'http://www.themuse.com/api/v1/jobs/';
 
