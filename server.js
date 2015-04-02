@@ -7,7 +7,7 @@ var application_root = __dirname,
     JobPost          = models.job_posts,
     Employer         = models.employers,
     Position         = models.positions,
-    feedGetter       = require('./feeds');
+    feedGetter       = require('./feeds');  //feedGetter.craigslist 
 
 
 var app = express();
@@ -28,7 +28,7 @@ app.use( express.static( path.join( application_root, 'browser' )));
 // Routes
 //Get all the Jobs
 app.get('/job_posts', function(req, res) {
-  Jobpost
+  JobPost
     .findAll()
     .then(function(jobposts) {
       res.send(jobposts);
@@ -42,7 +42,7 @@ app.get('/job_posts/:id', function(req, res) {
       where: { id: req.params.id },
       include: [
       { model: Employer },
-      { model: Position },
+      { model: Position },      //questionable comma
     ]})
       .then(function(jobpost) {
         res.send(jobpost);
@@ -65,7 +65,7 @@ app.put('/job_posts/:id', function(req, res) {
       where: { id: req.params.id },
       include: [
       { model: Employer },
-      { model: Position },
+      { model: Position },      //questionable comma 2
     ]})
       .then(function(jobpost) {
         jobpost
@@ -192,8 +192,6 @@ app.post('/job_posts/:id/positions', function(req, res) {
 });
 
 //Update the Positions
-
-
 
 app.put('/positions/:id', function(req, res) {
   Position

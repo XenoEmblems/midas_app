@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
       position_id: DataTypes.INTEGER,
       post_url: DataTypes.STRING,
       post_content: DataTypes.TEXT,
-      job_ID: DataTypes.INTEGER,
+      job_id: DataTypes.INTEGER,
       employer_name: DataTypes.STRING,
       salary: DataTypes.STRING,
       date_posted: DataTypes.STRING,
