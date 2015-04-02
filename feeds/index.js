@@ -7,12 +7,9 @@ module.exports = {
   //		glassdoor = require("./glassdoor.js"),
   //		muse = require("./the_muse.js");
 
-  		test_craig: function() {
+  		test: function() {
   			craigslist.queryNode();
-  		},
-
-  		test_muse: function() {
-  			muse.getJobs();
+        muse.getJobs();
   		},
 
       getEmployer: function(employerName){
