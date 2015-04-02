@@ -13,10 +13,15 @@ var application_root = __dirname,
 var app = express();
 
 
-//feeds.test_craig();
-//feeds.test_muse();
-feeds.getPosition('Web Developer');
-feeds.getEmployer('Google');
+/* 
+  
+  TEST FUNCTION TO FILL DATABASE 
+   un-comment "feeds.test()" below and it will check
+   both craigslist and the muse when the server relaunches  
+                                  */
+
+//feeds.test();
+
 
 
 // Server Configuration
