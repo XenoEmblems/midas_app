@@ -10,7 +10,7 @@ var request 		= require('request'),
 		Employer 		= models.employers,
 		Position		= models.positions;
 
-var query = 'http://newyork.craigslist.org/search/sof?query=node.js+&format=rss'
+var query = 'http://newyork.craigslist.org/search/sof?query=backbone.js+&format=rss'
 
 module.exports =  {
 
@@ -19,14 +19,27 @@ module.exports =  {
 			xml2js.parseString(body, function (err, result) {
     	 		var resultsArray = result["rdf:RDF"].item;
     	 		resultsArray.forEach(function(job) {
-						var data = {
-							job_title: job.title[0],
-							post_url: job.link[0],
-							post_content: job.description[0],
-							date_posted: job['dc:date'][0]
-						};
-						JobPost.create(data);
-					})
+					var data = {
+						job_title: job.title[0],
+						post_url: job.link[0],
+						post_content: job.description[0],
+						date_posted: job['dc:date'][0]
+					};
+					JobPost
+						.count({
+							where: {
+								post_url: data.post_url
+							}
+						})
+						.then(function (count) {
+							if (!count) {
+								JobPost.create(data);
+							}
+						});
+						
+
+
+					});
 			});
 		});
 	}
