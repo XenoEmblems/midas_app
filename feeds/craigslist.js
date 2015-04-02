@@ -2,15 +2,15 @@
 // calls craigslist rss query and parses rss feed
 // and adds new models to our db
 
-var request 		= require('request'),
-		bodyParser  = require('body-parser'),
-		xml2js			= require('xml2js'),
-		models      = require('../models'),
-		JobPost 		= models.job_posts,
-		Employer 		= models.employers,
-		Position		= models.positions;
+var request 	= require('request'),
+	bodyParser  = require('body-parser'),
+	xml2js		= require('xml2js'),
+	models      = require('../models'),
+	JobPost 	= models.job_posts,
+	Employer 	= models.employers,
+	Position	= models.positions;
 
-var query = 'http://newyork.craigslist.org/search/sof?query=backbone.js+&format=rss'
+var query = 'http://newyork.craigslist.org/search/sof?query=node.js+&format=rss'
 
 module.exports =  {
 
@@ -25,6 +25,8 @@ module.exports =  {
 						post_content: job.description[0],
 						date_posted: job['dc:date'][0]
 					};
+					
+					// checks db to see if we have this already	
 					JobPost
 						.count({
 							where: {
@@ -33,7 +35,7 @@ module.exports =  {
 						})
 						.then(function (count) {
 							if (!count) {
-								JobPost.create(data);
+								JobPost.create(data); //if not, make a new one
 							}
 						});
 						
