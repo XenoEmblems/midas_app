@@ -22,7 +22,6 @@ module.exports = function() {
 				t.p: GLASSDOOR_ID;
 			};
 
-
 	    	request({
 	    		// uri: rootUrl + partnerId + '&t.k=' + apiKey + '&userip=65.78.5.153 &useragent=&format=json&v=1&action=jobs-stats&returnStates=true&admLevelRequested=1',
 					uri: rootUrl,
@@ -35,7 +34,7 @@ module.exports = function() {
 	    	 	console.log(results);
 	    	});
 	    });
-			
+
 	});
 
 };

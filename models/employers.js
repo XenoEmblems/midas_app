@@ -9,8 +9,8 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        employers.hasMany(models.job_posts, { 
-          foreignKey: 'employer_id' 
+        employers.hasMany(models.job_posts, {
+          foreignKey: 'employer_id'
         });
       }
     }

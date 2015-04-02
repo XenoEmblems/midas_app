@@ -1,0 +1,14 @@
+<template id="list-view-template">
+  <div class="jobs-list" data-id="{{id}}">
+    <div class="post-summary">
+      <h3>Employer Name: {{employer_name}}</h3>
+      <h3>Job Title: {{job_title}}</h3>
+      <h4>Location: {{location}}</h4>
+      <h4>Date Created: {{date_created}}</h4>
+      <input type="hidden" value="{{post_id}}" id="post-id"><br>
+    </div>
+    <div class="single-job-show-more">
+      <h2 class="show-more">SHOW ME MORE INFO ON THIS JOB</h2>
+    </div>
+  </div>
+</template>
