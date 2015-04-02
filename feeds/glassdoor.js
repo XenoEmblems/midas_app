@@ -6,21 +6,23 @@ var request 	= require('request'),
 	Employer 		= models.employers,
 	Position		= models.positions;
 
-module.exports = function() {
+var rootUrl = 'http://api.glassdoor.com/api/api.htm?';
 
-	var rootUrl = 'http://api.glassdoor.com/api/api.htm?';
+
+module.exports = {
+
 
 	query: function(query, value) {
 	    
-
 	    var queryParams = {
 				useragent: '',
 				format: 'json',
+				userip: '208.185.23.206',
 				v: '1',
 				returnStates: 'true',
 				admLevelRequested: '1',
-				t.k: GLASSDOOR_KEY,
-				t.p: GLASSDOOR_ID;
+				't.k': process.env.GLASSDOOR_KEY,
+				't.p': process.env.GLASSDOOR_ID
 			};
 
 			if (query === 'position'){
@@ -29,24 +31,21 @@ module.exports = function() {
 				queryParams.countryId = '1';
 			} else if (query === 'employer') {
 				queryParams.q = value;
-				queryParams.action = 'employer';
+				queryParams.action = 'employers';
 				queryParams.city = 'New York';
 				queryParams.city = 'New York';
 			}
 
 	    	request({
 	    		// uri: rootUrl + partnerId + '&t.k=' + apiKey + '&userip=65.78.5.153 &useragent=&format=json&v=1&action=jobs-stats&returnStates=true&admLevelRequested=1',
-					uri: rootUrl,
+				uri: rootUrl,
 	    		method: 'GET',
 	    		// json: true,
 	    		qs: queryParams
 	    	},
 	    	 function(error, response, body) {
-	    	 	var results = body.response;
-	    	 	console.log(results);
-	    	});
-	    });
+	    	 	console.log(body);
+	    	})
 
-	});
-
+		}
 };

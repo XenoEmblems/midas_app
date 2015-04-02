@@ -17,7 +17,7 @@ module.exports = {
 
       getEmployer: function(employerName){
         glassdoor.query('employer', employerName);
-      }
+      },
 
       getPosition: function(positionName){
         glassdoor.query('position', positionName);
