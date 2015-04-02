@@ -1,6 +1,6 @@
 "use strict";
 module.exports = function(sequelize, DataTypes) {
-  var jobPosts = sequelize.define('job_posts', {
+  var job_posts = sequelize.define('job_posts', {
       job_title: DataTypes.STRING,
       position_id: DataTypes.INTEGER,
       post_url: DataTypes.STRING,
@@ -21,10 +21,10 @@ module.exports = function(sequelize, DataTypes) {
 
   classMethods: {
       associate: function(models) {
-      jobPosts.belongsTo(models.positions, { foreignKey: 'position_id' });
-      jobPosts.belongsTo(models.employers, { foreignKey: 'employer_id' });
+      job_posts.belongsTo(models.positions, { foreignKey: 'position_id' });
+      job_posts.belongsTo(models.employers, { foreignKey: 'employer_id' });
     }
   }
 });
-  return jobPosts;
+  return job_posts;
 };

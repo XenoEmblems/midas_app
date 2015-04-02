@@ -6,6 +6,6 @@ module.exports = {
   //		muse = require("./the_muse.js");
 
   		test_craig: function() {
-  			craigslist.test();
+  			craigslist.queryNode();
   		}
 }
