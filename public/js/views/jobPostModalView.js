@@ -13,7 +13,7 @@ App.Views.JobPostModal = Backbone.View.extend ({
     },
 
     render: function() {
-      this.$el.html( this.template( App.jobPost.toJSON() ) );
+      this.$el.html( this.template( this.model.toJSON() ) );
     },
 
     setModel: function(newModel) {
@@ -27,8 +27,6 @@ App.Views.JobPostModal = Backbone.View.extend ({
     },
 
     showEmployerModal: function() {
-      console.log('employer clicked');
-      // debugger;
       $('#show-modal').empty();
       this.render();
       this.$el.show();
