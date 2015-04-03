@@ -27,9 +27,9 @@ App.Routers.JobPostRouter = Backbone.Router.extend({
 
   listView: function() {
     this.empty();
-    App.jobPostModal.hide();
-    App.employerModal.hide();
-    App.positionModal.hide();
+    // App.jobPostModal.hide();
+    // App.employerModal.hide();
+    // App.positionModal.hide();
     $('#main').html(new App.jobsView.$el);
   },
 
