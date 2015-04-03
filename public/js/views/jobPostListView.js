@@ -7,6 +7,7 @@ App.Views.JobPostList = Backbone.View.extend ({
         console.log(this.collection);
         this.template = Handlebars.compile( $('#list-view-template').html() );
         this.listenTo(this.collection, 'reset', this.renderAll);
+        this.listenTo('#job-post-preview', 'click', showModal);
       },
 
       renderAll: function() {
@@ -29,12 +30,10 @@ App.Views.JobPostList = Backbone.View.extend ({
         'click .show-more': 'showModal'
       },
 
-      showModal: function(event) {
-        var model = this.collection.get( $(event.target).data('id') );
-        model.fetch({
-          success: function(model) {
-            console.log(model);
-            new App.Views.JobPostModal({ model: model });
+      showModal: function() {
+            App.jobPostModal.model = App.jobPost;
+            App.jobPostModal.render();
+            App.jobPostModal.showModal();
           }
       });
     }
