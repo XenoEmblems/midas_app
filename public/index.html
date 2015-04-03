@@ -30,6 +30,75 @@
 	<h1>AW YEAH MIDA$$$$!!</h1>
 
 	<section id="main"></section>
-	<section id="modal"></section> <!--this is temporary until we figure out the whole template thing -->
+	<section id="modal"></section> 
+
+
+
+
+
+<!--TEMPLATES-->
+	<template id="list-view-template">
+	      <div class="post-summary">
+	        <h2>Future Positions</h2>
+	        <h3>Employer Name: {{employer_name}}</h3>
+	        <h3>Job Title: {{job_title}}</h3>
+	        <h4>Location: {{location}}</h4>
+	        <h4>Date Posted: {{date_posted}}</h4>
+	        <input type="hidden" value="{{post_id}}" id="post-id"><br>
+	      </div>
+	    <div class="single-job-show-more">
+	      <h2 class="show-more">SHOW ME MORE INFO ON THIS JOB</h2>
+	    </div>
+	</template>
+
+
+	<template id="preview-template">
+	    <div class="job-post-preview">
+	      <h4>{{job_title}} || {{employer_name}} || {{location}} || {{date_posted}}</h4>
+	    </div>
+	</template>
+
+
+	 <template id="job-post-modal-template">
+	    <span class='close'>close</span>
+	      <div class="post-data">
+	        <h3>Employer Name: {{employer_name}}</h3>
+	        <h3>Job Title: {{job_title}}</h3>
+	        <h4>Location: {{location}}</h4>
+	        <h4>Date Posted: {{date_posted}}</h4>
+	        <h4>Date Created: {{date_created}}</h4>
+	        <h5>URL: {{post_url}}</h5>
+	        <h5>Level: {{levell}}</h5>
+	        <h5>Description: {{post_content}}</h5>
+	        <input type="hidden" value="{{post_id}}" id="post-id"><br>
+	      </div>
+	 </template>
+
+	 <template id="employer_modal_view">
+	    <span class='close'>close</span>
+	    <div class="employer" data-id="{{id}}">
+	      <h1>Company Name: {{company_name}}</h1>
+	      <h3>Company Link: {{company_url}}</h3>
+	      <img src="{{company_logo}}">
+	      <input type="hidden" value="{{glassdoor_id}}" id="glassdoor-id">
+	      <h3>Rating: {{glassdoor_rating}}</h3>
+	      <img src="glassdoorlogo">
+	      <h6 class="delete" data-id="{{id}}">Delete</h6>
+	      <a href='http://www.glassdoor.com/index.htm'>powered by <img src='http://www.glassdoor.com/static/img/api/glassdoor_logo_80.png' title='Job Search' /></a>
+	    </div>
+	 </template>
+
+	 <template id="position_modal_view">
+	    <span class='close'>close</span>
+	    <div class="position" data-id="{{id}}">
+	      <h1>Position: {{name}}</h1>
+	      <h3>Pay Low: {{pay_low}}</h3>
+	      <h3>Pay Median: {{pay_median}}</h3>
+	      <h3>Pay High: {{pay_high}}</h3>
+	      <h6 class="delete" data-id="{{id}}">Delete</h6>
+	      <a href='http://www.glassdoor.com/index.htm'>powered by <img src='http://www.glassdoor.com/static/img/api/glassdoor_logo_80.png' title='Job Search' /></a>
+	    </div>
+	 </template>
+
 </body>
 </html>
