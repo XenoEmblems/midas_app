@@ -12,7 +12,7 @@ App.Views.JobPostList = Backbone.View.extend ({
       },
 
       renderOne: function() {
-        this.$el.append(new App.Views.JobPostModalView({ model: jobPost }).$el);
+        this.$el.append(new App.Views.JobPostModal({ model: jobPost }).$el);
       },
 
       events: {
@@ -24,7 +24,7 @@ App.Views.JobPostList = Backbone.View.extend ({
         model.fetch({
           success: function(model) {
             console.log(model);
-            new App.Views.JobPostModalView({ model: model });
+            new App.Views.JobPostModal({ model: model });
           }
       });
     }
