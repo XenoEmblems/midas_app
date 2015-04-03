@@ -15,7 +15,7 @@ var app = express();
 
 //testing glassdoor
 
-console.log(feeds.getEmployer('Google'));
+//console.log(feeds.getEmployer('Google'));
 
 /* 
   
@@ -104,7 +104,15 @@ app.delete('/job_posts/:id', function(req, res) {
 //live query for employers (not in our db)
 app.get('/employer_info', function(req, res) {
   var employerName = req.query.name;
-  feeds.getEmployer(employerName, res);
+  feeds.getEmployer(employerName, function (err, result) {
+    if (err) {
+      console.log("error: ", error);
+      //res.send("error: ", err)
+    } else if (result) {
+      console.log("result: ", result);
+      res.send(result);
+    }
+  });
 });
 
 

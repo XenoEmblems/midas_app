@@ -12,10 +12,7 @@ var rootUrl = 'http://api.glassdoor.com/api/api.htm?';
 module.exports = {
 
 
-	query: function(query, value) {
-	    
-	    var results = 'a';
-
+	query: function(query, value, callback) {
 	    var queryParams = {
 				useragent: '',
 				format: 'json',
@@ -44,15 +41,14 @@ module.exports = {
 	    		method: 'GET',
 	    		// json: true,
 	    		qs: queryParams
-	    	},
-	    	 function(error, response, body) {
-	    	 	console.log('results: ', results);
-	    	 	results = 'b';
-	    	 	console.log('now results is ', results)
-	    	 	return "FOO"
+	    	}, function(error, response, body) {
+	    	 	if (!error) {
+	    	 		callback(null, body);
+	    	 	} else if (error) {
+	    	 		callback(error);
+	    	 	}
 	    	});
 
-	    console.log('nobody ever gets here, huh ')
 
 	}
 };
