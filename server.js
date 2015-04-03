@@ -13,6 +13,10 @@ var application_root = __dirname,
 var app = express();
 
 
+//testing glassdoor
+
+console.log(feeds.getEmployer('Google'));
+
 /* 
   
   TEST FUNCTION TO FILL DATABASE 
@@ -96,6 +100,13 @@ app.delete('/job_posts/:id', function(req, res) {
         });
     });
 });
+
+//live query for employers (not in our db)
+app.get('/employer_info', function(req, res) {
+  var employerName = req.query.name;
+  feeds.getEmployer(employerName, res);
+});
+
 
 //Get the Employers
 app.get('/employers', function(req, res) {

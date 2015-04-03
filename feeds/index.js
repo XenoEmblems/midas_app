@@ -13,10 +13,11 @@ module.exports = {
   		},
 
       getEmployer: function(employerName){
-        glassdoor.query('employer', employerName);
+        var result = glassdoor.query('employer', employerName);
+        return result;
       },
 
       getPosition: function(positionName){
-        glassdoor.query('position', positionName);
+        return glassdoor.query('position', positionName);
       }
  }

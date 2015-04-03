@@ -14,6 +14,8 @@ module.exports = {
 
 	query: function(query, value) {
 	    
+	    var results = 'a';
+
 	    var queryParams = {
 				useragent: '',
 				format: 'json',
@@ -44,8 +46,13 @@ module.exports = {
 	    		qs: queryParams
 	    	},
 	    	 function(error, response, body) {
-	    	 	console.log(body);
-	    	})
+	    	 	console.log('results: ', results);
+	    	 	results = 'b';
+	    	 	console.log('now results is ', results)
+	    	 	return "FOO"
+	    	});
 
-		}
+	    console.log('nobody ever gets here, huh ')
+
+	}
 };
