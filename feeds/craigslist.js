@@ -21,8 +21,9 @@ module.exports =  {
     	 		resultsArray.forEach(function(job) {
     	 		// Gets the Date...
     			var str = job['dc:date'][0];
-    			//Slices it into the first 10 Characters..
+    			//Slices it into the first 10 Characters.
 					var date = str.slice(0, 10);
+					console.log(date)
 
 					var data = {
 						job_title: job.title[0],
