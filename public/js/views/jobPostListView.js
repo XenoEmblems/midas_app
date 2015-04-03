@@ -11,8 +11,13 @@ App.Views.JobPostList = Backbone.View.extend ({
         this.collection.each(this.renderOne, this);
       },
 
-      renderOne: function() {
-        this.$el.append(new App.Views.JobPostModal({ model: jobPost }).$el);
+      renderOne: function(model) {
+        var previewTemplate = Handlebars.compile($('#list-preview-template').html());
+        this.$el.append(previewTemplate(model.toJSON()));
+      },
+
+      renderModal: function(model) {
+        this.$el.append(new App.Views.JobPostModal({ model: model }).$el);
       },
 
       events: {
