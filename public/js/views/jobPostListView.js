@@ -1,27 +1,23 @@
 App.Views.JobPostList = Backbone.View.extend ({
 
-      el: '#main',
+      el: '#list',
 
       initialize: function() {
         console.log("new JobPostList view created");
         console.log(this.collection);
         this.template = Handlebars.compile( $('#list-view-template').html() );
-        this.listenTo(this.collection, 'reset', this.renderAll() );
-        this.collection.fetch();
+        this.listenTo(this.collection, 'reset', this.renderAll);
       },
 
       renderAll: function() {
-        console.log("renderAll called")
-        console.log(this.collection.length); // this isn't getting reset...
-        this.collection.each(function (one) {
-          console.log("heyyyyyy");
-        })
+          for (var i = 0; i < this.collection.length; i++) {
+            var job = this.collection.models[i];
+            this.renderOne(job);
+          }
       },
 
       renderOne: function(model) {
-        console.log(model);
-        this.$el.append("RENDER ONE CALLED");
-        var previewTemplate = Handlebars.compile($('#list-preview-template').html());
+        var previewTemplate = Handlebars.compile($('#preview-template').html());
         this.$el.append(previewTemplate(model.toJSON()));
       },
 
