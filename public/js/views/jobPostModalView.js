@@ -8,20 +8,29 @@ App.Views.JobPostModal = Backbone.View.extend ({
     },
 
     events: {
-      'click .close': 'hideModal'
+      'click .close': 'hideModal',
+      'click .employer': 'showEmployerModal'
     },
 
     render: function() {
       this.$el.html( this.template( App.jobPost.toJSON() ) );
-      this.$el.show();
     },
 
     setModel: function(newModel) {
       this.model = newModel;
+      this.render();
     },
 
     hideModal: function() {
-      this.$el.fadeOut(250);
+      this.$el.fadeOut(500);
       this.model = null;
+    },
+
+    showEmployerModal: function() {
+      console.log('employer clicked');
+      // debugger;
+      $('#show-modal').empty();
+      this.render();
+      this.$el.show();
     }
 });

@@ -1,6 +1,6 @@
 App.Views.EmployerModal = Backbone.View.extend({
 
-  el: '#modal',
+  el: '#show-modal',
 
   initialize: function() {
     this.template = Handlebars.compile( $('#employer-modal-template').html() );
@@ -17,7 +17,7 @@ App.Views.EmployerModal = Backbone.View.extend({
   },
 
   hideModal: function() {
-    this.$el.fadeOut(250);
+    this.$el.fadeOut(500);
     this.model = null;
   }
 
