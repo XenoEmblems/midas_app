@@ -2,7 +2,7 @@ App.Views.JobPostModal = Backbone.View.extend ({
 
     el: '#modal',
 
-    intialize: function {
+    intialize: function() {
       console.log('single post modal view is happening!');
       this.template = Handlebars.compile( $('#job-post-modal-template').html() );
       this.render();
