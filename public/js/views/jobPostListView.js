@@ -4,7 +4,7 @@ App.Views.JobPostList = Backbone.View.extend ({
 
       intitialize: function() {
         this.template = Handlebars.compile( $('#list-view-template').html() );
-        this.listenTo(this.collection, 'reset', this.renderAll());
+        this.listenTo(this.collection, 'reset', this.renderAll() );
       },
 
       renderAll: function() {
