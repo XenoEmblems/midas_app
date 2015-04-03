@@ -1,6 +1,6 @@
 App.Views.JobPostModal = Backbone.View.extend ({
 
-    el: '#modal',
+    el: '#show-modal',
 
     initialize: function() {
       this.template = Handlebars.compile( $('#job-post-modal-template').html() );

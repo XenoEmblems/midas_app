@@ -1,1 +1,14 @@
-null
+#show-modal {
+	display: none;
+	color: white;
+	background: rgba(0, 0, 0, 0.8);
+	position: absolute;
+  left: 200px;
+  top: 0px;
+  width: 75%;
+  height: 100%;
+  text-align: center;
+  z-index: 1000;
+  border-radius: 30px;
+  overflow: scroll;
+}
