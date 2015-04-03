@@ -11,7 +11,7 @@ App.Routers.JobPostRouter = Backbone.Router.extend({
 
 
 
-    // App.jobPostModal = new App.Views.JobPostModal({ model: App.jobPost });
+    App.jobPostModal = new App.Views.JobPostModal({ model: App.jobPost });
     // App.employerModal = new App.Views.EmployerModal({ model: App.employer });
     // App.positionModal = new App.Views.PositionModal({ model: App.position });
     App.jobPosts.fetch({reset: true});
