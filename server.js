@@ -102,10 +102,8 @@ app.get('/employer_info', function(req, res) {
   var employerName = req.query.name;
   feeds.getEmployer(employerName, function (err, result) {
     if (err) {
-      console.log("error: ", error);
-      //res.send("error: ", err)
+      res.send("error: ", err)
     } else if (result) {
-      console.log("result: ", result);
       res.send(result);
     }
   });
@@ -174,6 +172,18 @@ app.delete('/employers/:id', function(req, res) {
           res.send(employer);
         });
     });
+});
+
+//live query for employers (not in our db)
+app.get('/position_info', function(req, res) {
+  var positionName = req.query.name;
+  feeds.getPosition(positionName, function (err, result) {
+    if (err) {
+      res.send("error: ", err)
+    } else if (result) {
+      res.send(result);
+    }
+  });
 });
 
 //Get All the Positions
