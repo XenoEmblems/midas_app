@@ -32,7 +32,7 @@ module.exports = {
 				queryParams.q = value;
 				queryParams.action = 'employers';
 				queryParams.city = 'New York';
-				queryParams.city = 'New York';
+				queryParams.state = 'New York';
 			}
 
 	    	request({

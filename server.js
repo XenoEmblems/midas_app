@@ -7,24 +7,20 @@ var application_root = __dirname,
     JobPost          = models.job_posts,
     Employer         = models.employers,
     Position         = models.positions,
-    feeds            = require('./feeds');  //feedGetter.craigslist 
+    feeds            = require('./feeds');  //feedGetter.craigslist
 
 
 var app = express();
 
 
-//testing glassdoor
+/*
 
-//console.log(feeds.getEmployer('Google'));
-
-/* 
-  
-  TEST FUNCTION TO FILL DATABASE 
+  TEST FUNCTION TO FILL DATABASE
    un-comment "feeds.test()" below and it will check
-   both craigslist and the muse when the server relaunches  
+   both craigslist and the muse when the server relaunches
                                   */
 
-//feeds.test();
+// feeds.test();
 
 
 

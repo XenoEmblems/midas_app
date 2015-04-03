@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>midas_app</title>
+
 	<link rel="stylesheet" href="css/style.css">
 
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -10,7 +11,7 @@
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
 
-	<!--<script src='bundle.js'></script>-->
+	<script src='bundle.js'></script>
 	<script src='js/app.js'></script>
 	<script src="js/models/jobPost.js"></script>
 	<script src="js/models/employer.js"></script>
@@ -32,10 +33,10 @@
 	<section id="main">
 		<div id="list"></div>
 	</section>
-	<section id="modal"></section> 
 
-
-
+	<section id="modal">
+		<div id="show-modal"></div>
+	</section>
 
 
 <!--TEMPLATES-->
@@ -48,24 +49,22 @@
 	        <h4>Date Posted: {{date_posted}}</h4>
 	        <input type="hidden" value="{{post_id}}" id="post-id"><br>
 	      </div>
-	    <div class="single-job-show-more">
-	      <h2 class="show-more">SHOW ME MORE INFO ON THIS JOB</h2>
-	    </div>
 	</template>
 
 
 	<template id="preview-template">
-	    <div class="job-post-preview">
+	    <div class="job-post-preview" data-job="{{post_id}}">
 	      <h4>{{job_title}} || {{employer_name}} || {{location}} || {{date_posted}}</h4>
 	    </div>
+		</div>
 	</template>
 
 
 	 <template id="job-post-modal-template">
 	    <span class='close'>close</span>
 	      <div class="post-data">
-	        <h3>Employer Name: {{employer_name}}</h3>
-	        <h3>Job Title: {{job_title}}</h3>
+					<h3 class="employer">Employer Name: {{employer_name}}</h3>
+	        <div class="position"><h3>Job Title: {{job_title}}</h3></div>
 	        <h4>Location: {{location}}</h4>
 	        <h4>Date Posted: {{date_posted}}</h4>
 	        <h4>Date Created: {{date_created}}</h4>

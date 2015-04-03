@@ -1,6 +1,6 @@
 App.Views.PositionModal = Backbone.View.extend({
 
-  el: '#modal',
+  el: '#show-modal',
 
   initialize: function() {
     this.template = Handlebars.compile( $('#position-modal-template').html() );
@@ -17,7 +17,7 @@ App.Views.PositionModal = Backbone.View.extend({
   },
 
   hideModal: function() {
-    this.$el.fadeOut(250);
+    this.$el.fadeOut(500);
     this.model = null;
   }
 
