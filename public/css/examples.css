@@ -1,0 +1,74 @@
+/*
+
+selectors used in examples.html (April 4, 2015):
+
+Tags: div, span
+
+IDs: #body-container
+        #top
+           #top-details
+              #user-name
+                 #user-address-1
+                 #user-address-2
+                 #user-address-3
+                 #user-address-4
+        #middle
+        	#objective
+        	#job-opportunities
+        	#work-experience
+
+Classes: .section
+			.section-head
+				.section-contents
+					.section-item
+						.section-item-headline
+							.company-name, .job-title, .location, .date
+						.section-item-body
+*/
+
+
+/* 
+
+relative sizes for text 
+
+*/
+
+#user-name {
+	font-size: 2em;
+}
+#user-address-1, #user-address-2, #user-address-3, #user-address-4 {
+	font-size: 1.25em;
+}
+
+.section-head {
+	font-size: 1.4em;
+}
+
+.section-item-headline {
+	font-size: 1.1em;
+}
+
+/* 
+
+	relative positioning of containers 
+
+*/
+
+
+/* 
+
+	spacing
+
+*/
+
+#middle .section {
+	margin: 20px 0 30px 0;
+}
+
+#middle .section-head {
+	margin: 2px 0 5px 0;
+}
+
+#middle .section-item {
+	margin: 4px 0 4px 0;
+}
