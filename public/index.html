@@ -16,6 +16,7 @@
 	<script src="js/models/jobPost.js"></script>
 	<script src="js/models/employer.js"></script>
 	<script src="js/models/position.js"></script>
+	<script src="js/models/userInfo.js"></script>
 	<script src="js/collections/jobPosts.js"></script>
 	<script src="js/collections/employers.js"></script>
 	<script src="js/collections/positions.js"></script>
@@ -24,6 +25,7 @@
 	<script src="js/views/jobPostModalView.js"></script>
 	<script src="js/views/positionModalView.js"></script>
 	<script src="js/views/employerModalView.js"></script>
+	<script src="js/views/userInfoView.js"></script>
 
 </head>
 
@@ -32,6 +34,7 @@
 	<h1>AW YEAH MIDA$$$$!!</h1>
 
 	<section id="main">
+		<div id="user-form"></div>
 		<div id="list"></div>
 	</section>
 
@@ -41,6 +44,18 @@
 
 
 <!--TEMPLATES-->
+
+<template id="user-form-template">
+	<div class="user-form">
+		<p>Name: <input type="text" id="user-name" placeholder="Title"></p>
+		<p>Address Line One: <input type="text" id="user-address-one" placeholder="Enter Adress Line One..."></p>
+		<p>Address Line Two: <input type="text" id="user-address-line-two" placeholder="Enter Address Line Two..."></p>
+		<p>Phone Number: <input type="text" id="user-phone-number" placeholder="Can I have your number?..."></p>
+		<p>Email: <input type="text" id="user-email" placeholder="Ok...but can I also have your email address?..."></p>
+		<button class="submit-button">Submit My Info</button>
+	</div>
+</template>
+
 	<template id="list-view-template">
 	      <div class="post-summary">
 	        <h2>Future Positions</h2>
