@@ -1,15 +1,18 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+@import url(http://fonts.googleapis.com/css?family=Arvo);
+
 html, body {
   min-height: 100%;
 }
 
 body {
   position: relative;
+  font-family: 'Lato', sans-serif;
 }
 
 body.modal-open {
     overflow: hidden;
 }
-
 
 #show-modal {
   position: fixed;
@@ -25,6 +28,9 @@ body.modal-open {
   border-radius: 30px;
   overflow-y: scroll;
   margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3%;
   /*max-height:90%;*/
 }
 
