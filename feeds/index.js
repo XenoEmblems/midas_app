@@ -1,6 +1,6 @@
-var 	craigslist 	= require("./craigslist.js")
-		muse 		= require("./the_muse.js")
-    glassdoor = require("./glassdoor.js")
+var 	craigslist 	 = require("./craigslist.js")
+		  muse 		     = require("./the_muse.js")
+      glassdoor    = require("./glassdoor.js")
 
 module.exports = {
   //var craigslist = require("./craigslist.js"),
@@ -17,6 +17,6 @@ module.exports = {
       },
 
       getPosition: function(positionName, callback){
-        return glassdoor.query('position', positionName, callback);
+        glassdoor.query('position', positionName, callback);
       }
  }
