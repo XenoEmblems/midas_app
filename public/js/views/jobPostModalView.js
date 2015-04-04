@@ -36,8 +36,14 @@ App.Views.JobPostModal = Backbone.View.extend ({
     },
 
     cleanEmployerData: function(data){
-      data = $.parseJSON(data);
-      console.log(data.response.employers[0]);
+      data = $.parseJSON(data).response.employers[0];
+        if(data.exactMatch){
+          this.showEmployer(data);
+        }
+    },
+
+    showEmployer: function(data){
+      
     }
 
 
