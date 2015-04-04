@@ -1,6 +1,6 @@
 App.Views.EmployerModal = Backbone.View.extend({
 
-  el: '#show-modal',
+  className: 'employer-modal',
 
   initialize: function() {
     // App.employerModal = new App.Views.EmployerModal({ model: App.employer });
@@ -10,6 +10,7 @@ App.Views.EmployerModal = Backbone.View.extend({
   },
 
   render: function() {
+    this.$el.empty();
     this.$el.html( this.template( this.model.toJSON() ) );
   },
 
