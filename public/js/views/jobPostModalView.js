@@ -10,7 +10,7 @@ App.Views.JobPostModal = Backbone.View.extend ({
 
     events: {
       'click .close': 'hideModal',
-      'click .employer': 'showEmployerModal'
+      'click .employer': 'getEmployerData'
     },
 
     render: function() {
@@ -27,9 +27,18 @@ App.Views.JobPostModal = Backbone.View.extend ({
       this.model = null;
     },
 
-    showEmployerModal: function() {
-      console.log('employer clicked');
-      console.log();
-      $('#show-modal').empty();
+    getEmployerData: function() {
+      var employer = this.model.get('employer_name');
+      if (employer) {
+        $.ajax({url: window.location + 'employer_info?name=' + employer, method:'GET'})
+        .done(this.cleanEmployerData);
+      }
+    },
+
+    cleanEmployerData: function(data){
+      data = $.parseJSON(data);
+      console.log(data.response.employers[0]);
     }
+
+
 });
