@@ -32,12 +32,12 @@ module.exports =  {
     			//Slices it into the first 10 Characters.
 					var datecreate = strcreate.slice(0, 10);
 					var dateposted = strposted.slice(0, 10);
-					
+
 					var data = {
 				 		job_title: job.title,
 				 		//position_id: ,
 				 		post_url: job.external_apply_link,
-				 		post_content: job.description,
+				 		post_content: job.full_description,
 				 		//job_ID: ,
 				 		employer_name: job.company_name,
 				 		//salary: ,

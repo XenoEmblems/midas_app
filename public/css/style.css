@@ -12,18 +12,18 @@ body.modal-open {
 
 
 #show-modal {
-  position: absolute;
+  position: fixed;
 	display: none;
 	color: white;
 	background: rgba(0, 0, 0, 0.8);
   left: 10%;
   top: 0px;
   width: 75%;
-  /*height: 80%;*/
+  height: 80%;
   text-align: center;
   z-index: 1000;
   border-radius: 30px;
-  overflow-y:auto;
-  max-height:90%;
-  /*margin-top:-45%;*/
+  overflow-y: scroll;
+  margin-top: 10%;
+  /*max-height:90%;*/
 }
