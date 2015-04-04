@@ -64,20 +64,20 @@
 	 <template id="job-post-modal-template">
 	    <span class='close'>X</span>
 	      <div class="post-data">
-					<h3 class="employer">Employer Name: {{employer_name}}</h3>
-	        <div class="position"><h3>Job Title: {{job_title}}</h3></div>
-	        <h4>Location: {{location}}</h4>
-	        <h4>Date Posted: {{date_posted}}</h4>
-	        <h4>Date Created: {{date_created}}</h4>
+					<h3 class="employer">Employer Name:<br>{{employer_name}}</h3>
+	        <div class="position"><h3>Job Title:<br>{{job_title}}</h3></div>
+	        <h4>Location:<br>{{location}}</h4>
+	        <h4>Date Posted:<br>{{date_posted}}</h4>
+	        <h4>Date Created:<br>{{date_created}}</h4>
 					<a target="{{post_url}}" href="{{post_url}}">NAVIGATE TO THIS POST OFF SITE</a>
-	        <h5>Level: {{levell}}</h5>
-	        <h5>Description: {{post_content}}</h5>
+	        <!--<h5>Level:<br>{{level}}</h5>-->
+	        <h5>Description:<br>{{post_content}}</h5>
 	        <input type="hidden" value="{{post_id}}" id="post-id"><br>
 	      </div>
 	 </template>
 
-	 <template id="employer_modal_view">
-	    <span class='close'>close</span>
+	 <template id="employer-modal-view">
+		<span class='close'>X</span>
 	    <div class="employer" data-id="{{id}}">
 	      <h1>Company Name: {{company_name}}</h1>
 	      <h3>Company Link: {{company_url}}</h3>
@@ -90,8 +90,8 @@
 	    </div>
 	 </template>
 
-	 <template id="position_modal_view">
-	    <span class='close'>close</span>
+	 <template id="position-modal-view">
+		<span class='close'>X</span>
 	    <div class="position" data-id="{{id}}">
 	      <h1>Position: {{name}}</h1>
 	      <h3>Pay Low: {{pay_low}}</h3>

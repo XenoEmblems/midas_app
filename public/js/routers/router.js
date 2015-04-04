@@ -8,14 +8,11 @@ App.Routers.JobPostRouter = Backbone.Router.extend({
 
     App.jobPosts = new App.Collections.JobPosts();
     App.jobsView = new App.Views.JobPostList({ collection: App.jobPosts });
-
-
-
     App.jobPostModal = new App.Views.JobPostModal({ model: App.jobPost });
-    // App.employerModal = new App.Views.EmployerModal({ model: App.employer });
-    // App.positionModal = new App.Views.PositionModal({ model: App.position });
     App.jobPosts.fetch({reset: true});
-  },
+},
+
+
 
   routes: {
     // '': 'index',
@@ -27,9 +24,6 @@ App.Routers.JobPostRouter = Backbone.Router.extend({
 
   listView: function() {
     this.empty();
-    // App.jobPostModal.hide();
-    // App.employerModal.hide();
-    // App.positionModal.hide();
     $('#main').html(new App.jobsView.$el);
   },
 
