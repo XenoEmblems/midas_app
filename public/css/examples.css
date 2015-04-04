@@ -26,6 +26,20 @@ Classes: .section
 						.section-item-body
 */
 
+/* 
+
+fonts
+
+*/
+
+.section-head, .company-name {
+	font-weight: bold;
+}
+
+.location {
+	font-style: oblique;
+}
+
 
 /* 
 
@@ -36,7 +50,7 @@ relative sizes for text
 #user-name {
 	font-size: 2em;
 }
-#user-address-1, #user-address-2, #user-address-3, #user-address-4 {
+#user-address-1, #user-address-2, #user-address-3 {
 	font-size: 1.25em;
 }
 
@@ -50,14 +64,39 @@ relative sizes for text
 
 /* 
 
-	relative positioning of containers 
+	giving the whole thing some margins
 
 */
+
+#body-container {
+	margin-left: 6%;
+	margin-right: 4%;
+}
+
+/* 
+
+	positioning the top 
+
+*/
+
+#top {
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	padding-right: 70px;
+}
+
+#user-name, #user-address-1, #user-address-2, #user-address-3, #user-address-4 {
+	display: block;
+	margin-top: 6px;
+}
+
 
 
 /* 
 
-	spacing
+	line spacing
 
 */
 
@@ -72,3 +111,33 @@ relative sizes for text
 #middle .section-item {
 	margin: 4px 0 4px 0;
 }
+
+#middle .section-item-headline {
+	margin-bottom: 3px;
+}
+
+/*
+
+spacing in the headlines
+
+*/
+
+
+.job-title {
+	padding-right: 20px;
+}
+
+.company-name {
+	margin-right: 20px;
+}
+
+.no-name {
+	margin: 0px;
+}
+
+.location {
+	padding-right: 10px;
+}
+
+
+
