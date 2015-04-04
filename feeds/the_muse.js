@@ -26,6 +26,13 @@ module.exports =  {
 				console.log("error: ", error)
 			} else {
 				body.results.forEach(function (job) {
+					// Gets the Date...
+    			var strcreate  = job.update_date;
+    			var strposted  = job.creation_date;
+    			//Slices it into the first 10 Characters.
+					var datecreate = strcreate.slice(0, 10);
+					var dateposted = strposted.slice(0, 10);
+					
 					var data = {
 				 		job_title: job.title,
 				 		//position_id: ,
@@ -34,8 +41,8 @@ module.exports =  {
 				 		//job_ID: ,
 				 		employer_name: job.company_name,
 				 		//salary: ,
-				 		date_posted: job.update_date,
-				 		date_created:job.creation_date,
+				 		date_posted: dateposted,
+				 		date_created: datecreate,
 				 		post_id: job.id,
 				 		location: job.locations[0],
 				 		//is_entry: , //boolean

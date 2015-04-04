@@ -20,7 +20,7 @@ var app = express();
    both craigslist and the muse when the server relaunches  
                                   */
 
-//feeds.test();
+feeds.test();
 
 
 
