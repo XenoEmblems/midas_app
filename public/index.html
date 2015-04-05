@@ -33,8 +33,9 @@
 
 	<h1>AW YEAH MIDA$$$$!!</h1>
 
+	<div id="user-info-header"></div>
+
 	<section id="main">
-		<div id="user-form"></div>
 		<div id="list"></div>
 	</section>
 
@@ -45,16 +46,20 @@
 
 <!--TEMPLATES-->
 
-<template id="user-form-template">
-	<div class="user-form">
-		<p>Name: <input type="text" id="user-name" placeholder="Title"></p>
-		<p>Address Line One: <input type="text" id="user-address-one" placeholder="Enter Adress Line One..."></p>
-		<p>Address Line Two: <input type="text" id="user-address-line-two" placeholder="Enter Address Line Two..."></p>
-		<p>Phone Number: <input type="text" id="user-phone-number" placeholder="Can I have your number?..."></p>
-		<p>Email: <input type="text" id="user-email" placeholder="Ok...but can I also have your email address?..."></p>
-		<button class="submit-button">Submit My Info</button>
-	</div>
-</template>
+	<template id="user-form-template">
+		<div class="user-form">
+			<p>Name: <input type="text" id="user-name" placeholder="Title"></p>
+			<p>Address: <input type="text" id="user-address" placeholder="Enter Adress Line One..."></p>
+			<div class="city-state-zip">
+			<p>City: <input type="text" id="user-address-city" placeholder="City..."></p>
+			<p>State: <input type="text" id="user-address-state" placeholder="State..."></p>
+			<p>Zip: <input type="text" id="user-address-zip" placeholder="State..."></p></div>
+			<p>Phone Number: <input type="text" id="user-phone-number" placeholder="Can I have your number?..."></p>
+			<p>Email: <input type="text" id="user-email" placeholder="Ok...but can I also have your email address?..."></p>
+			<button class="submit-button">Submit My Info</button>
+		</div>
+	</template>
+
 
 	<template id="list-view-template">
 	      <div class="post-summary">
