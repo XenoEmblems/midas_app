@@ -12,7 +12,16 @@ body {
 }
 
 body.modal-open {
-    overflow: hidden;
+  overflow: hidden;
+}
+
+input[type=text] {
+  margin-bottom: -100px;
+  display: inline;
+}
+
+.city-state-zip {
+  display: inline;
 }
 
 #show-modal {
@@ -49,7 +58,7 @@ a {
 }
 
 a:link {
-  color: green;
+  color: yellowgreen;
 }
 
 a:visited {

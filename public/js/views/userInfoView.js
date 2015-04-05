@@ -1,19 +1,31 @@
 App.Views.UserInfo = Backbone.View.extend ({
 
-    el: '#user-form',
+    el: '#user-info-header',
 
-    initialize: function() {
+
+    initialize: function(model) {
+      console.log('new User form created');
       var newUser = $('#user-form-template').html();
       this.template = Handlebars.compile(newUser);
-      this.render();
+      this.$el.html(newUser);
     },
 
     events: {
-      'click .submit-button' : 'submit'
+      'click .submit-button': 'renderUserData'
     },
 
-    submit: function() {
-      var newUserHtml = this.newUser(this.model.toJSON());
-      this.$el.html(newUserHtml);
+    renderUserData: function() {
+      var model = this.model;
+      var template = Handlebars.compile($('#user-form-template').html());
+      var data = {
+            name: $("#user-name").val(),
+            address: $("#user-address").val(),
+            city: $("#user-address-city").val(),
+            state: $("#user-address-state").val(),
+            zip: $("#user-address-zip").val(),
+            phoneNumber: $("#user-phone-number").val(),
+            email: $("#user-email").val(),
+      };
+      this.$el.append(this.template(data.toJSON));
     }
 });

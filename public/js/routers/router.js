@@ -5,10 +5,13 @@ App.Routers.JobPostRouter = Backbone.Router.extend({
     App.jobPost = new App.Models.JobPost();
     App.employer = new App.Models.Employer();
     App.position = new App.Models.Position();
+    App.userInfo = new App.Models.UserInfo();
+
 
     App.jobPosts = new App.Collections.JobPosts();
     App.jobsView = new App.Views.JobPostList({ collection: App.jobPosts });
     App.jobPostModal = new App.Views.JobPostModal({ model: App.jobPost });
+    App.userFormView = new App.Views.UserInfo({ model: App.userInfo });
     App.jobPosts.fetch({reset: true});
 },
 
@@ -27,6 +30,10 @@ App.Routers.JobPostRouter = Backbone.Router.extend({
     $('#main').html(new App.jobsView.$el);
   },
 
+  showUserForm: function() {
+    $('#user-form-header').html(new App.userFormView.$el);
+  },
+
   showSingleView: function() {
     var job = new App.Models.JobPost({ job_ID: id });
     App.jobPostModal.render();
@@ -35,7 +42,6 @@ App.Routers.JobPostRouter = Backbone.Router.extend({
   showEmployer: function() {
     var employer = new App.Models.Employer({ employer_id: id });
     App.employerPostModal.render();
-
   },
 
   showPosition: function() {

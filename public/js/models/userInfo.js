@@ -1,9 +1,11 @@
 App.Models.UserInfo = Backbone.Model.extend ({
 
+    url: '/job_post',
+    
     defaults: {
       name: 'King Mida$',
-      address-one: '123 Cash-Money Blvd, Apt #A-milli',
-      address-line: 'New York, NY $$$$$',
+      addressOne: '123 Cash-Money Blvd, Apt #A-milli',
+      addressLine: 'New York, NY $$$$$',
       email: 'wrappedinca$h@forbes.com'
     }
 
