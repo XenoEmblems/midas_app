@@ -133,21 +133,20 @@
 	 </template>
 
 	 <template id="employer-modal-view">
-		<span class='close'>X</span>
+		<span class='close'>X</span><span class='back'>back</span>
 	    <div class="employer" data-id="{{id}}">
-	      <h1>Company Name: {{company_name}}</h1>
-	      <h3>Company Link: {{company_url}}</h3>
-	      <img src="{{company_logo}}">
+	      <h1>Company Name: {{name}}</h1>
+	      <h3>Company Link: {{website}}</h3>
 	      <input type="hidden" value="{{glassdoor_id}}" id="glassdoor-id">
-	      <h3>Rating: {{glassdoor_rating}}</h3>
-	      <img src="glassdoorlogo">
-	      <h6 class="delete" data-id="{{id}}">Delete</h6>
+	      <h3>Overall Rating: {{overallRating}}</h3>
+	      <h3>Compensation Rating: {{compensationAndBenefitsRating}}</h3>
+	      <h3>Culture Rating: {{cultureAndValuesRating}}</h3>
 	      <a href='http://www.glassdoor.com/index.htm'>powered by <img src='http://www.glassdoor.com/static/img/api/glassdoor_logo_80.png' title='Job Search' /></a>
 	    </div>
 	 </template>
 
 	 <template id="position-modal-view">
-		<span class='close'>X</span>
+		<span class='close'>X</span><span class='back'>back</span>
 	    <div class="position" data-id="{{id}}">
 	      <h1>Position: {{name}}</h1>
 	      <h3>Pay Low: {{pay_low}}</h3>
