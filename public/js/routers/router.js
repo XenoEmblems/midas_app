@@ -9,10 +9,11 @@ App.Routers.JobPostRouter = Backbone.Router.extend({
 
 
     App.jobPosts = new App.Collections.JobPosts();
-    App.jobsView = new App.Views.JobPostList({ collection: App.jobPosts });
     App.jobPostModal = new App.Views.JobPostModal({ model: App.jobPost });
     App.userInfoModal = new App.Views.UserInfoModal();
     App.jobPosts.fetch({reset: true});
+    App.jobsView = new App.Views.JobPostList({ collection: App.jobPosts });
+    App.jobOps = new App.Views.JobOps();
 },
 
 

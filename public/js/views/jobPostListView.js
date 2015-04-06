@@ -1,12 +1,10 @@
 App.Views.JobPostList = Backbone.View.extend ({
 
-      el: '#main',
-
       initialize: function() {
         console.log("new JobPostList view created");
         console.log(this.collection);
         this.template = Handlebars.compile( $('#list-view-template').html() );
-        // this.listenTo('.show-me-jobs', 'click', this.renderAll);
+        this.renderAll();// this.listenTo('.show-me-jobs', 'click', this.renderAll);
         this.listenTo(this.collection, 'reset', this.renderAll);
         this.$el.on('click', '.job-post-preview', this.showModal);
       },
