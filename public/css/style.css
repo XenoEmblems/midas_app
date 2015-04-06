@@ -67,6 +67,7 @@ body.modal-open {
   height: 30px;
   width: 350px;
   position: center;
+  font-size: 18px;
 }
 
 .show-me-jobs:hover {
@@ -124,7 +125,7 @@ p {
   height: 50%;
   width: 50%;
   background-image: url('http://www.blueflamediamonds.com/666_500_csupload_60085102.jpg?u=2089260759');
-  background-position:50% 50%; 
+  background-position:50% 50%;
   background-size:cover;
   opacity: 0.85;
   color: white;
