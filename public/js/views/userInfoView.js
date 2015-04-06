@@ -26,6 +26,6 @@ App.Views.UserInfo = Backbone.View.extend ({
             phoneNumber: $("#user-phone-number").val(),
             email: $("#user-email").val(),
       };
-      this.$el.append(this.template(data.toJSON));
+      this.$el.append(this.template(this.model.toJSON()));
     }
 });
