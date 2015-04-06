@@ -31,7 +31,6 @@ App.Views.UserInfoModal = Backbone.View.extend ({
       console.log(newModel);
       var newView = new App.Views.UserInfo({model: newModel});//new App.Views.UserInfo(newModel);
       this.hide();
-      //NOW DO SOMETHING WITH THIS DATA
     },
 
     hide: function() {
