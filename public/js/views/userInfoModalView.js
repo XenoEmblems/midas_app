@@ -19,13 +19,13 @@ App.Views.UserInfoModal = Backbone.View.extend ({
 
     captureData: function() {
       var data = {
-            name: $("#user-name").val(),
-            address: $("#user-address").val(),
-            city: $("#user-address-city").val(),
-            state: $("#user-address-state").val(),
-            zip: $("#user-address-zip").val(),
-            phoneNumber: $("#user-phone-number").val(),
-            email: $("#user-email").val(),
+            name: $("#user-name-form").val(),
+            address: $("#user-address-form").val(),
+            city: $("#user-city-form").val(),
+            state: $("#user-state-form").val(),
+            zip: $("#user-zip-form").val(),
+            phoneNumber: $("#user-phone-number-form").val(),
+            email: $("#user-email-form").val(),
       };
       var newModel = new App.Models.UserInfo(data);
       console.log(newModel);
