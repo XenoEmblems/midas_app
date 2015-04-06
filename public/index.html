@@ -26,12 +26,13 @@
 	<script src="js/views/positionModalView.js"></script>
 	<script src="js/views/employerModalView.js"></script>
 	<script src="js/views/userInfoView.js"></script>
+	<script src="js/views/userInfoModalView.js"></script>
 
 </head>
 
 <body>
 
-	<h1>AW YEAH MIDA$$$$!!</h1>
+	<h1></h1>
 
 	<div id="user-info-header"></div>
 
@@ -40,35 +41,41 @@
 	</section>
 
 	<section id="modal">
-		<div id="show-modal"></div>
+		<div id="user-modal" class="modal"></div>
+		<div id="show-modal" class="modal"></div>
 	</section>
 
 
 <!--TEMPLATES-->
 
 	<template id="user-form-template">
-		<div class="user-form">
-			<p>Name: <input type="text" id="user-name" placeholder="Title"></p>
-			<p>Address: <input type="text" id="user-address" placeholder="Enter Adress Line One..."></p>
-			<p>City: <input type="text" id="user-address-city" placeholder="City..."></p>
-			<p>State: <input type="text" id="user-address-state" placeholder="State..."></p>
-			<p>Zip: <input type="text" id="user-address-zip" placeholder="Zip Code..."></p></div>
-			<p>Phone Number: <input type="text" id="user-phone-number" placeholder="Can I have your number?..."></p>
-			<p>Email: <input type="text" id="user-email" placeholder="Email address..."></p>
+		<div id="user-form">
+			<p>Name: <input type="text" id="user-name-form" placeholder="Enter Your First and Last Names"></p>
+			<p>Address: <input type="text" id="user-address-form" placeholder="Enter Address Line One..."></p>
+			<p>City: <input type="text" id="user-city-form" placeholder="City..."></p>
+			<p>State: <input type="text" id="user-state-form" placeholder="State..."></p>
+			<p>Zip: <input type="text" id="user-zip-form" placeholder="Zip Code..."></p></div>
+			<p>Phone Number: <input type="text" id="user-phone-number-form" placeholder="Can I have your number?..."></p>
+			<p>Email: <input type="text" id="user-email-form" placeholder="Email address..."></p>
 			<button class="submit-button">Submit My Info</button>
 		</div>
 	</template>
 
 	<template id="user-info-template">
-			<div class="form">
-				<span>Name: {{name}}></span>
-				<span>Address: {{address}}></span>
-				<span>City: {{city}}></span>
-				<span>State: {{state}}></span>
-				<span>Zip: {{zip}}></span>
-				<span>Phone Number: {{phoneNumber}}></span>
-				<span>Email: {{email}}></span><br>
-				<button class="edit-user">Edit Info</button>
+			<div id="user-info-heading">
+				<div id="user-name">{{name}}</div>
+				<div id="user-address-1">{{address}}</div>
+				<div id="user-address-2">
+					<span id="user-city">{{city}}</span>
+					<span id="user-state">{{state}}</span>
+					<span id="user-zip">{{zip}}</span>
+				</div>
+				<div id="user-address-3">
+					<span id="user-phone-number">{{phoneNumber}}</span>
+					<span id="user-email">{{email}}</span>
+					<button class="edit-user">Edit Info</button>
+				</div>
+				
 			</div>
 	</template>
 
