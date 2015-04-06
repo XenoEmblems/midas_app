@@ -49,14 +49,9 @@
 <!--TEMPLATES-->
 
 	<template id="user-form-template">
+		<h2>Enter your name:</h2>
 		<div id="user-form">
-			<p>Name: <input type="text" id="user-name-form" placeholder="Enter Your First and Last Names"></p>
-			<p>Address: <input type="text" id="user-address-form" placeholder="Enter Address Line One..."></p>
-			<p>City: <input type="text" id="user-city-form" placeholder="City..."></p>
-			<p>State: <input type="text" id="user-state-form" placeholder="State..."></p>
-			<p>Zip: <input type="text" id="user-zip-form" placeholder="Zip Code..."></p></div>
-			<p>Phone Number: <input type="text" id="user-phone-number-form" placeholder="Can I have your number?..."></p>
-			<p>Email: <input type="text" id="user-email-form" placeholder="Email address..."></p>
+			<p>Name: <input type="text" id="user-name-form" placeholder="First and Last Name"></p><br>
 			<button class="submit-button">Submit My Info</button>
 		</div>
 	</template>
@@ -72,30 +67,16 @@
 				</div>
 				<div id="user-address-3">
 					<span id="user-phone-number">{{phoneNumber}}</span>
-					<span id="user-email">{{email}}</span>
-					<button class="edit-user">Edit Info</button>
+					<span id="user-email">{{email}}</span><br>
+					<!--<button class="edit-user">Edit Info</button>-->
 				</div>
-				
 			</div>
 	</template>
 
 
-	<template id="user-edit-template">
-	    <div class="form">
-	      <span>Name: <input type="text" id="user-name" value="{{name}}"></span>
-	      <span>Address: <input type="text" id="user-address" value="{{address}}"></span>
-	      <span>City: <input type="text" id="user-city" value="{{city}}"></span>
-	      <span>State: <input type="text" id="user-state" value="{{state}}"></span>
-	      <span>Zip: <input type="text" id="user-zip" value="{{zip}}"></span>
-				<span>Phone Number: <input type="text" id="user-phone-number" value="{{phoneNumber}}"></span>
-				<span>Email: <input type="text" id="user-email" value="{{email}}"><</span><br>
-	      <button class="edit-user-submit">Update This Info</button>
-	    </div>
-	 </template>
-
-
 	<template id="list-view-template">
 	      <div class="post-summary">
+					<href=http://www.titaniumconsulting.co.uk/wp-content/uploads/2010/07/bullet_ball_glass_blue.png>
 	        <h2>Future Positions</h2>
 	        <h3>Employer Name: {{employer_name}}</h3>
 	        <h3>Job Title: {{job_title}}</h3>
@@ -118,7 +99,7 @@
 
 
 	 <template id="job-post-modal-template">
-	    <span class='close'>X</span>
+	    <span class='close'>[X]</span>
 	      <div class="post-data">
 					<h3 class="employer">Employer Name:<br>{{employer_name}}</h3>
 	        <div class="position"><h3>Job Title:<br>{{job_title}}</h3></div>
@@ -127,7 +108,9 @@
 	        <h4>Date Created:<br>{{date_created}}</h4>
 					<a target="{{post_url}}" href="{{post_url}}">NAVIGATE TO THIS POST OFF SITE</a>
 	        <!--<h5>Level:<br>{{level}}</h5>-->
-	        <h5>Description:<br>{{post_content}}</h5>
+					<div id="description">
+	        <h5>Description:<br><br>{{post_content}}</h5>
+				</div>
 	        <input type="hidden" value="{{post_id}}" id="post-id"><br>
 	      </div>
 	 </template>
