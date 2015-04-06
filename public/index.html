@@ -36,9 +36,27 @@
 
 	<div id="user-info-header"></div>
 
+	<div id="objective">
+		<h2 class="objectives-head">Objectives</h2>
+		<span class="objectives-body">To obtain a position as a junior full-stack developer with an emphasis on clean, performant Javascript coding.</span>
+	</div>
+
+<div id="job-ops">
+	<h2 class="job-ops-head">Job Opportunities</h2>
 	<section id="main">
-		<div id="list"></div>
+		<div id="list">
+			<button class="show-me-jobs">SHOW ME ALL THE JOBS!</button>
+			</div>
 	</section>
+</div>
+
+<div id="work-experience">
+	<h2 class="work-experience-head">Work Experience</h2>
+	<div id="experience-body">
+		<span class="ga-info">General Assembly Web Development Immersive New York, NY March 2015 - May 2015</span><br>
+		<p class="experience-text">Developed 20+ web front-end interfaces with html, css, and JQuery. Organized events and views with Backbone. Managed group workflow and version control with Git. Organized RESTful routes with Express. Managed dependencies with Require. Deployed sites both locally and on Heroku. Accessed 15+ external APIs with Request and managed PostGres database schemas and migrations with Sequelize.</p>
+	</div>
+</div>
 
 	<section id="modal">
 		<div id="user-modal" class="modal"></div>
@@ -49,7 +67,8 @@
 <!--TEMPLATES-->
 
 	<template id="user-form-template">
-		<h2>Enter your name:</h2>
+		<h3 class="welcome">Welcome to Job.me</h3>
+		<h4>Enter your name:</h4>
 		<div id="user-form">
 			<p>Name: <input type="text" id="user-name-form" placeholder="First and Last Name"></p><br>
 			<button class="submit-button">Submit My Info</button>
@@ -116,7 +135,7 @@
 	 </template>
 
 	 <template id="employer-modal-view">
-		<span class='close'>X</span>
+		<span class='close'>[X]</span>
 	    <div class="employer" data-id="{{id}}">
 	      <h1>Company Name: {{company_name}}</h1>
 	      <h3>Company Link: {{company_url}}</h3>
@@ -130,7 +149,7 @@
 	 </template>
 
 	 <template id="position-modal-view">
-		<span class='close'>X</span>
+		<span class='close'>[X]</span>
 	    <div class="position" data-id="{{id}}">
 	      <h1>Position: {{name}}</h1>
 	      <h3>Pay Low: {{pay_low}}</h3>
