@@ -100,21 +100,20 @@ p {
 }
 
 #user-modal {
-  height: 25%;
-  width: 35%;
-  background-color: goldenrod;
-  opacity: 0.93;
-  color: black;
+  height: 30%;
+  width: 40%;
+  background-image: url('http://www.michaelspornanimation.com/splog/wp-content/uploads/2013/03/GoldTouch14.jpg');
+  background-position: center;
+  opacity: 0.83;
+  color: white;
   overflow-y: hidden;
 }
 
 #user-form {
   z-index: 5000;
+  padding: 10px;
 }
 
-#user-form-template {
-  margin-top: px;
-}
 
 #user-info-heading {
   text-align: center;
@@ -128,6 +127,7 @@ p {
   font-weight: bolder;
   font-size: 25px;
   margin-bottom: 10px;
+  margin-top: 5px;
 }
 
 .submit-button {
