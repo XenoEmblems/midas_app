@@ -54,7 +54,7 @@
 			<p>State: <input type="text" id="user-address-state" placeholder="State..."></p>
 			<p>Zip: <input type="text" id="user-address-zip" placeholder="Zip Code..."></p></div>
 			<p>Phone Number: <input type="text" id="user-phone-number" placeholder="Can I have your number?..."></p>
-			<p>Email: <input type="text" id="user-email" placeholder="Email address..."></p><br>
+			<p>Email: <input type="text" id="user-email" placeholder="Email address..."></p>
 			<button class="submit-button">Submit My Info</button>
 		</div>
 	</template>
@@ -74,7 +74,10 @@
 
 	<template id="preview-template">
 	    <div class="job-post-preview" data-job="{{id}}">
-	      <h4>{{job_title}} || {{employer_name}} || {{location}} || {{date_posted}}</h4>
+				<span>{{job_title}}</span>
+				<span>{{employer_name}}</span>
+				<span>{{location}}</span>
+				<span>{{date_posted}}</span>
 	    </div>
 		</div>
 	</template>
