@@ -45,8 +45,40 @@ button {
   margin-bottom: 15px;
 }
 
+#user-name-heading {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-right: 70px;
+}
 
-#show-modal {
+#user-name {
+  font-size: 2em;
+}
+
+#user-address-1, #user-address-2 {
+  font-size: 1.25em;
+}
+
+#user-address-3 {
+  font-size: .8em;
+}
+
+#user-name, #user-address-1, #user-address-2, #user-address-3, #user-address-4 {
+  display: block;
+  margin-top: 6px;
+}
+
+#user-email {
+  padding-left: 5px;
+}
+
+.button.edit-user {
+  float:right;
+}
+
+.modal {
   position: fixed;
 	display: none;
 	color: white;

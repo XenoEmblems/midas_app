@@ -31,7 +31,7 @@
 
 <body>
 
-	<h1>AW YEAH MIDA$$$$!!</h1>
+	<h1></h1>
 
 	<div id="user-info-header"></div>
 
@@ -40,7 +40,7 @@
 	</section>
 
 	<section id="modal">
-		<div id="show-modal"></div>
+		<div id="show-modal" class="modal"></div>
 	</section>
 
 
@@ -60,15 +60,20 @@
 	</template>
 
 	<template id="user-info-template">
-			<div class="form">
-				<span>Name: {{name}}></span>
-				<span>Address: {{address}}></span>
-				<span>City: {{city}}></span>
-				<span>State: {{state}}></span>
-				<span>Zip: {{zip}}></span>
-				<span>Phone Number: {{phoneNumber}}></span>
-				<span>Email: {{email}}></span><br>
-				<button class="edit-user">Edit Info</button>
+			<div id="user-info-heading">
+				<div id="user-name">{{name}}</div>
+				<div id="user-address-1">{{address}}</div>
+				<div id="user-address-2">
+					<span id="user-city">{{city}}</span>
+					<span id="user-state">{{state}}</span>
+					<span id="user-zip">{{zip}}</span>
+				</div>
+				<div id="user-address-3">
+					<span id="user-phone-number">{{phoneNumber}}</span>
+					<span id="user-email">{{email}}</span>
+					<button class="edit-user">Edit Info</button>
+				</div>
+				
 			</div>
 	</template>
 
