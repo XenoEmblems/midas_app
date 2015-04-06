@@ -10,7 +10,8 @@ App.Views.JobPostModal = Backbone.View.extend ({
 
     events: {
       'click .close': 'hideModal',
-      'click .employer': 'getEmployerData'
+      'click .employer': 'getEmployerData',
+      'click .back': 'render'
     },
 
     render: function() {
@@ -27,22 +28,30 @@ App.Views.JobPostModal = Backbone.View.extend ({
       this.model = null;
     },
 
+    // checks to see if we have an employer name 
+    // and calls our API if we do
     getEmployerData: function() {
       var employer = this.model.get('employer_name');
       if (employer) {
         $.ajax({url: window.location + 'employer_info?name=' + employer, method:'GET'})
-        .done(this.cleanEmployerData);
+        .done(this.checkEmployerData);
       }
     },
 
-    cleanEmployerData: function(data){
+    // checks to see if we found an exact match
+    // using a field called "exactMatch" in the glassdoor api 
+    // and makes a model if we do
+    checkEmployerData: function(data){
       data = $.parseJSON(data).response.employers[0];
-        if(data.exactMatch){
-          this.showEmployer(data);
-        }
+      if(data.exactMatch) {
+        var newEmployer = new App.Models.Employer(data);
+        App.jobPostModal.showEmployer(newEmployer);   
+      }
     },
 
-    showEmployer: function(data){
+    showEmployer: function(employerModel){
+      var employerModal = new App.Views.Employer({model: employerModel});
+      this.$el.html(employerModal.$el.html())
       
     }
 
