@@ -1,7 +1,7 @@
-App.Views.PositionModal = Backbone.View.extend({
+App.Views.Position = Backbone.View.extend({
 
 initialize: function() {
-    this.template = Handlebars.compile( $('#position-modal-template').html() );
+    this.template = Handlebars.compile( $('#position-modal-view').html() );
     this.render();
   },
 
