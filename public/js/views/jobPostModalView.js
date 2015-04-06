@@ -11,6 +11,7 @@ App.Views.JobPostModal = Backbone.View.extend ({
     events: {
       'click .close': 'hideModal',
       'click .employer': 'getEmployerData',
+      'click .position': 'getPositionData',
       'click .back': 'render'
     },
 
@@ -53,7 +54,32 @@ App.Views.JobPostModal = Backbone.View.extend ({
       var employerModal = new App.Views.Employer({model: employerModel});
       this.$el.html(employerModal.$el.html())
       
-    }
+    },
+
+    getPositionData: function() {
+      var position = this.model.get('job_title');
+      if (position) {
+        $.ajax({url: window.location + 'position_info?name=' + position, method:'GET'})
+        .done(this.checkPositionData);
+      }
+    },
+
+    checkPositionData: function(data){
+      var data = $.parseJSON(data).response;
+      var newPosition = new App.Models.Position(data);
+      App.jobPostModal.showPosition(newPosition);
+      //data = $.parseJSON(data).response.position[0];
+      //if(data.exactMatch) {
+      //  var newPosition = new App.Models.Position(data);
+      //  App.jobPostModal.showPosition(newPosition);   
+      //}
+    },
+
+    showPosition: function(positionModel){
+      var positionModal = new App.Views.Position({model: positionModel});
+      this.$el.html(positionModal.$el.html())
+      
+    },
 
 
 });
