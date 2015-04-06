@@ -21,8 +21,11 @@ var app = express();
    both craigslist and the muse when the server relaunches
                                   */
 
-feeds.test();
-feeds.testtwo();
+var testhours    = setInterval(function(){feeds.test()}, 7190000);
+var testhourstwo = setInterval(function(){feeds.testtwo()}, 7200000);
+// setInterval(feeds.test(),7200000); 
+// setInterval(feeds.testtwo(),400);
+
 
 
 
