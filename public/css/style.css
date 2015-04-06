@@ -8,22 +8,32 @@ html, body {
 body {
   position: relative;
   font-family: 'Lato', sans-serif;
-  text-align: center;
+  font-weight: normal;
+  text-align: left;
 }
 
 body.modal-open {
   overflow: hidden;
 }
 
-span {
-  padding: 2px;
-  line-spacing: 3px;
+#main {
+  margin-left: 30px;
 }
 
-.job-post-preview span:after{
+.job-post-preview span::after{
   content: "||";
   line-height: 30px;
 }
+
+.job-post-preview:hover {
+  color: indianred;
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+/*****************/
+   /*USER INFO*/
+/*****************/
 
 p {
   margin-top: -1px;
@@ -33,17 +43,6 @@ p {
   text-align: center;
 }
 
-input[type=text] {
-  width: 200px;
-  text-align: center;
-}
-
-button {
-  font-family: 'Lato', sans-serif;
-  font-weight: bold;
-  margin-top: 10px;
-  margin-bottom: 15px;
-}
 
 #user-name-heading {
   max-width: 400px;
@@ -74,11 +73,49 @@ button {
   padding-left: 5px;
 }
 
-.button.edit-user {
-  float:right;
+#user-modal {
+  height: 25%;
+  width: 30%;
+  background-color: goldenrod;
+  opacity: 0.93;
+  color: black;
+  overflow-y: scroll;
 }
 
+#user-form {
+  z-index: 5000;
+}
 
+#user-info-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.submit-button {
+  height: 20%;
+  width: 40%;
+}
+
+/*****************/
+   /*MODALS*/
+/*****************/
+
+span {
+  padding: 2px;
+  line-spacing: 3px;
+}
+
+input[type=text] {
+  width: 200px;
+  text-align: center;
+}
+
+button {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
 
 .modal {
   position: fixed;
@@ -99,18 +136,6 @@ button {
   padding: 3%;
 }
 
-#user-form {
-  z-index: 5000;
-}
-
-.close {
-  position: absolute;
-  top: 5%;
-  left: 5%;
-  color: indianred;
-  font-weight: bolder;
-  font-size: 20px;
-}
 
 a {
   font-size: 15px;
@@ -121,5 +146,18 @@ a:link {
 }
 
 a:visited {
-  color: lavender;
+  color: goldenrod;
+}
+
+#description {
+  font-size: 18px;
+}
+
+.close {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  color: indianred;
+  font-weight: bolder;
+  font-size: 20px;
 }
