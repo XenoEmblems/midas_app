@@ -11,7 +11,8 @@ App.Views.UserInfo = Backbone.View.extend ({
     },
 
     events: {
-      'click .submit-button': 'renderUserData'
+      'click .submit-button': 'renderUserData',
+      'click .submit-button': 'hide'
     },
 
     renderUserData: function() {
@@ -26,6 +27,11 @@ App.Views.UserInfo = Backbone.View.extend ({
             phoneNumber: $("#user-phone-number").val(),
             email: $("#user-email").val(),
       };
-      this.$el.append(this.template(this.model.toJSON()));
+      this.$el.append(this.template(this.data.toJSON()));
+    },
+
+    hide: function() {
+      this.$el.fadeOut(500);
+      this.model = null;
     }
 });
