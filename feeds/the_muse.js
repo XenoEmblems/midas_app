@@ -37,7 +37,7 @@ module.exports =  {
 				 		job_title: job.title,
 				 		//position_id: ,
 				 		post_url: job.external_apply_link,
-				 		post_content: strippedtext,
+				 		post_content: job.full_description, //switch to strippedtext for stripped text
 				 		//job_ID: ,
 				 		employer_name: job.company_name,
 				 		//salary: ,

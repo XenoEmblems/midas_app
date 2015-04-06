@@ -1,7 +1,7 @@
-var request 	= require('request'),
-	bodyParser  = require('body-parser'),
+var request 		= require('request'),
+	bodyParser  	= require('body-parser'),
 	xml2js			= require('xml2js'),
-	models      = require('../models'),
+	models      	= require('../models'),
 	JobPost 		= models.job_posts,
 	Employer 		= models.employers,
 	Position		= models.positions;

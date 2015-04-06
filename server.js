@@ -21,8 +21,9 @@ var app = express();
    both craigslist and the muse when the server relaunches
                                   */
 
-feeds.test();
-feeds.testtwo();
+//feeds.test();
+//feeds.testtwo();
+feeds.testIndeed();
 
 
 
