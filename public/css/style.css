@@ -78,6 +78,8 @@ button {
   float:right;
 }
 
+
+
 .modal {
   position: fixed;
 	display: none;
@@ -95,6 +97,10 @@ button {
   margin-left: auto;
   margin-right: auto;
   padding: 3%;
+}
+
+#user-form {
+  z-index: 5000;
 }
 
 .close {
