@@ -41,6 +41,11 @@ body.modal-open {
   line-height: 30px;
 }
 
+.job-post-preview:last{
+  left: auto;
+  right: none;
+}
+
 .job-post-preview:hover {
   color: indianred;
   font-weight: bolder;
