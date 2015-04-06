@@ -1,4 +1,7 @@
 "use strict";
+
+
+
 module.exports = function(sequelize, DataTypes) {
   var job_posts = sequelize.define('job_posts', {
       job_title: DataTypes.STRING,

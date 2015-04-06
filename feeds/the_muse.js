@@ -9,7 +9,6 @@ var request 	= require('request'),
 	Employer 	= models.employers,
 	Position	= models.positions;
 
-
 var queryParams = {
 	'job_category[]': 'Engineering',
 	'job_level[]': 'Entry Level',
@@ -32,12 +31,13 @@ module.exports =  {
     			//Slices it into the first 10 Characters.
 					var datecreate = strcreate.slice(0, 10);
 					var dateposted = strposted.slice(0, 10);
+					var strippedtext = job.full_description.replace(/(<([^>]+)>)/ig,"");
 
 					var data = {
 				 		job_title: job.title,
 				 		//position_id: ,
 				 		post_url: job.external_apply_link,
-				 		post_content: job.full_description,
+				 		post_content: strippedtext,
 				 		//job_ID: ,
 				 		employer_name: job.company_name,
 				 		//salary: ,
