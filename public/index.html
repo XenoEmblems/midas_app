@@ -59,6 +59,33 @@
 		</div>
 	</template>
 
+	<template id="user-info-template">
+			<div class="form">
+				<span>Name: {{name}}></p>
+				<span>Address: {{address}}></p>
+				<span>City: {{city}}></p>
+				<span>State: {{state}}></p>
+				<span>Zip: {{zip}}></p>
+				<span>Phone Number: {{phoneNumber}}></p>
+				<span>Email: {{email}}></p><br>
+				<button class="edit-user">Edit Info</button>
+			</div>
+	</template>
+
+
+	<template id="user-edit-template">
+	    <div class="form">
+	      <span>Name: <input type="text" id="user-name" value="{{name}}"></p>
+	      <span>Address: <input type="text" id="user-address" value="{{address}}"></p>
+	      <span>City: <input type="text" id="user-city" value="{{city}}"></p>
+	      <span>State: <input type="text" id="user-state" value="{{state}}"></p>
+	      <span>Zip: <input type="text" id="user-zip" value="{{zip}}"></p>
+				<span>Phone Number: <input type="text" id="user-phone-number" value="{{phoneNumber}}"></p>
+				<span>Email: <input type="text" id="user-email" value="{{email}}"></p><br>
+	      <button class="edit-user-submit">Update This Info</button>
+	    </div>
+	 </template>
+
 
 	<template id="list-view-template">
 	      <div class="post-summary">
