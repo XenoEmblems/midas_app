@@ -36,9 +36,27 @@
 
 	<div id="user-info-header"></div>
 
+	<div id="objective">
+		<h2 class="objectives-head">Objectives</h2>
+		<span class="objectives-body">To obtain a position as a junior full-stack developer with an emphasis on clean, performant Javascript coding.</span>
+	</div>
+
+<div id="job-ops">
+	<h2 class="job-ops-head">Job Opportunities</h2>
 	<section id="main">
-		<div id="list"></div>
+		<div id="list">
+			<button class="show-me-jobs">SHOW ME ALL THE JOBS!</button>
+			</div>
 	</section>
+</div>
+
+<div id="work-experience">
+	<h2 class="work-experience-head">Work Experience</h2>
+	<div id="experience-body">
+		<span class="ga-info">General Assembly Web Development Immersive New York, NY March 2015 - May 2015</span><br>
+		<p class="experience-text">Developed 20+ web front-end interfaces with html, css, and JQuery. Organized events and views with Backbone. Managed group workflow and version control with Git. Organized RESTful routes with Express. Managed dependencies with Require. Deployed sites both locally and on Heroku. Accessed 15+ external APIs with Request and managed PostGres database schemas and migrations with Sequelize.</p>
+	</div>
+</div>
 
 	<section id="modal">
 		<div id="user-modal" class="modal"></div>
@@ -49,14 +67,10 @@
 <!--TEMPLATES-->
 
 	<template id="user-form-template">
+		<h3 class="welcome">Welcome to Job.me</h3>
+		<h4>Enter your name:</h4>
 		<div id="user-form">
-			<p>Name: <input type="text" id="user-name-form" placeholder="Enter Your First and Last Names"></p>
-			<p>Address: <input type="text" id="user-address-form" placeholder="Enter Address Line One..."></p>
-			<p>City: <input type="text" id="user-city-form" placeholder="City..."></p>
-			<p>State: <input type="text" id="user-state-form" placeholder="State..."></p>
-			<p>Zip: <input type="text" id="user-zip-form" placeholder="Zip Code..."></p></div>
-			<p>Phone Number: <input type="text" id="user-phone-number-form" placeholder="Can I have your number?..."></p>
-			<p>Email: <input type="text" id="user-email-form" placeholder="Email address..."></p>
+			<p>Name: <input type="text" id="user-name-form" placeholder="First and Last Name"></p><br>
 			<button class="submit-button">Submit My Info</button>
 		</div>
 	</template>
@@ -72,30 +86,16 @@
 				</div>
 				<div id="user-address-3">
 					<span id="user-phone-number">{{phoneNumber}}</span>
-					<span id="user-email">{{email}}</span>
-					<button class="edit-user">Edit Info</button>
+					<span id="user-email">{{email}}</span><br>
+					<!--<button class="edit-user">Edit Info</button>-->
 				</div>
-				
 			</div>
 	</template>
 
 
-	<template id="user-edit-template">
-	    <div class="form">
-	      <span>Name: <input type="text" id="user-name" value="{{name}}"></span>
-	      <span>Address: <input type="text" id="user-address" value="{{address}}"></span>
-	      <span>City: <input type="text" id="user-city" value="{{city}}"></span>
-	      <span>State: <input type="text" id="user-state" value="{{state}}"></span>
-	      <span>Zip: <input type="text" id="user-zip" value="{{zip}}"></span>
-				<span>Phone Number: <input type="text" id="user-phone-number" value="{{phoneNumber}}"></span>
-				<span>Email: <input type="text" id="user-email" value="{{email}}"><</span><br>
-	      <button class="edit-user-submit">Update This Info</button>
-	    </div>
-	 </template>
-
-
 	<template id="list-view-template">
 	      <div class="post-summary">
+					<href=http://www.titaniumconsulting.co.uk/wp-content/uploads/2010/07/bullet_ball_glass_blue.png>
 	        <h2>Future Positions</h2>
 	        <h3>Employer Name: {{employer_name}}</h3>
 	        <h3>Job Title: {{job_title}}</h3>
@@ -118,7 +118,7 @@
 
 
 	 <template id="job-post-modal-template">
-	    <span class='close'>X</span>
+	    <span class='close'>[X]</span>
 	      <div class="post-data">
 					<h3 class="employer">Employer Name:<br>{{employer_name}}</h3>
 	        <div class="position"><h3>Job Title:<br>{{job_title}}</h3></div>
@@ -127,13 +127,15 @@
 	        <h4>Date Created:<br>{{date_created}}</h4>
 					<a target="{{post_url}}" href="{{post_url}}">NAVIGATE TO THIS POST OFF SITE</a>
 	        <!--<h5>Level:<br>{{level}}</h5>-->
-	        <h5>Description:<br>{{post_content}}</h5>
+					<div id="description">
+	        <h5>Description:<br><br>{{post_content}}</h5>
+				</div>
 	        <input type="hidden" value="{{post_id}}" id="post-id"><br>
 	      </div>
 	 </template>
 
 	 <template id="employer-modal-view">
-		<span class='close'>X</span><span class='back'>back</span>
+		<span class='close'>[X]</span><span class='back'>back</span>
 	    <div class="employer" data-id="{{id}}">
 	      <h1>Company Name: {{name}}</h1>
 	      <h3>Company Link: {{website}}</h3>
@@ -146,7 +148,7 @@
 	 </template>
 
 	 <template id="position-modal-view">
-		<span class='close'>X</span><span class='back'>back</span>
+		<span class='close'>[X]</span><span class='back'>back</span>
 	    <div class="position" data-id="{{id}}">
 	      <h1>Position: {{name}}</h1>
 	      <h3>Pay Low: {{pay_low}}</h3>
