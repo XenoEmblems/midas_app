@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300);
 @import url(http://fonts.googleapis.com/css?family=Arvo);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:700);
 
 html, body {
   min-height: 100%;
@@ -10,11 +11,25 @@ body {
   font-family: 'Lato', sans-serif;
   font-weight: normal;
   text-align: left;
+  margin: 45px;
 }
 
 body.modal-open {
   overflow: hidden;
 }
+
+.objectives-header {
+  margin-bottom: 10px;
+}
+
+.job-ops-header {
+  margin-bottom: 10px;
+}
+
+
+/*****************/
+   /*MAIN VIEW*/
+/*****************/
 
 #main {
   margin-left: 30px;
@@ -29,6 +44,17 @@ body.modal-open {
   color: indianred;
   font-weight: bolder;
   font-size: 18px;
+}
+
+.job-ops-header {
+  margin-bottom: 10px;
+}
+
+.experience-text {
+  margin-left: 30px;
+  margin-top: 10px;
+  text-align: left;
+  font-style: italic;
 }
 
 /*****************/
@@ -75,20 +101,33 @@ p {
 
 #user-modal {
   height: 25%;
-  width: 30%;
+  width: 35%;
   background-color: goldenrod;
   opacity: 0.93;
   color: black;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 #user-form {
   z-index: 5000;
 }
 
-#user-info-header {
+#user-form-template {
+  margin-top: px;
+}
+
+#user-info-heading {
   text-align: center;
   margin-bottom: 30px;
+}
+
+
+.welcome {
+  font-family: 'Ubuntu Mono';
+  color: white;
+  font-weight: bolder;
+  font-size: 25px;
+  margin-bottom: 10px;
 }
 
 .submit-button {
