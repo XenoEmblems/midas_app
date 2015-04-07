@@ -10,7 +10,7 @@ var sequelize = new Sequelize(config.database, config.username, config.password,
 var db        = {};
 
 if (process.env.HEROKU_POSTGRESQL_WHITE_URL) {
-  sequelize = new Sequelie(process.env.HEROKU_POSTGRESQL_WHITE_URL, {
+  sequelize = new Sequelize(process.env.HEROKU_POSTGRESQL_WHITE_URL, {
     dialect: 'postgres',
     protocol: 'postgres',
     logging: true
