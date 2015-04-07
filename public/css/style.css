@@ -26,6 +26,10 @@ body.modal-open {
   margin-bottom: 10px;
 }
 
+.section-head, #user-info-header {
+  font-family: Arvo;
+}
+
 
 /*****************/
    /*COLLECTION VIEW*/
@@ -86,7 +90,7 @@ ul:hover {
 }
 
 .preview li::after{
-  content: "||";
+  
 }
 
 .preview li:first-child {
@@ -94,8 +98,8 @@ ul:hover {
 }
 
 .preview li:last-child {
-  left: auto;
-  right: 0;
+  float: right;
+  padding-right: 20px;
 }
 
 .preview li{
