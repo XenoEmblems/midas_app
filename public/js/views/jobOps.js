@@ -7,6 +7,7 @@ App.Views.JobOps = Backbone.View.extend({
 	},
 
 	showJobs: function(){
+		console.log("HEYYYYYY");
 		$('.show-me-jobs').remove();
 		this.$el.append(App.jobsView.$el);
 	},
