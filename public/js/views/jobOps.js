@@ -13,33 +13,10 @@ App.Views.JobOps = Backbone.View.extend({
 	},
 
 	showJobs: function(){
-		$('.show-me-jobs').remove();
+		$('.special-buttons').empty();
 		this.$el.append(App.jobsView.$el);
 	},
 
-	showJobsToo: function(event) {
-		var x = event.keyCode;
-    if (x == 13) {
-			$('.show-me-jobs').remove();
-			this.$el.append(App.jobsView.$el);
-    	}
-	},
-
-	showJobsByQuery: function(){
-		$('#job-ops').empty();
-		console.log(this);
-		var query = $(this).data('query');
-		console.log(query);
-		var url = '/job_posts/query?q=' + query;
-		var collectionName = 'App.' + query + 'Jobs';
-		var listName = 'App.' + query + 'List';
- 		$.ajax({url: url, method: 'GET'})
-		.done(function(data){
-			collectionName = new App.Collections.JobPosts(data);
-			listName = new App.Views.JobPostList({collection: collectionName});
-			App.jobOps.showList(query);
-		})
-	},
 
 	showJavascriptJobs: function(){
 		$('button').remove();
