@@ -28,7 +28,7 @@ feeds.testIndeed();
 var testhours    = setInterval(function(){feeds.test()}, 7190000);
 var testhourstwo = setInterval(function(){feeds.testtwo()}, 7200000);
 var testhoursthree = setInterval(function(){feeds.testIndeed()}, 7180000);
-// setInterval(feeds.test(),7200000); 
+// setInterval(feeds.test(),7200000);
 // setInterval(feeds.testtwo(),400);
 
 
@@ -65,6 +65,20 @@ app.get('/job_posts/:id', function(req, res) {
         res.send(jobpost);
        });
 });
+
+//Jobs Query Route
+
+// app.get('/job_posts/query', function (req, res) {
+//   JobPost
+//     .findAll({
+//       where: { req.query },
+//         include: [
+//           { job_title: }
+//         ]}).then
+//       }
+//     })
+//
+// })
 
 //Create the Jobs
 app.post('/job_posts', function(req, res) {
@@ -105,6 +119,7 @@ app.delete('/job_posts/:id', function(req, res) {
         });
     });
 });
+
 
 //live query for employers (not in our db)
 app.get('/employer_info', function(req, res) {
@@ -259,6 +274,8 @@ app.delete('/positions/:id', function(req, res) {
         });
     });
 });
+
+
 
 
 
