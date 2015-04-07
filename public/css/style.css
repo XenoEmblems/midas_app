@@ -76,6 +76,7 @@ ul {
   border-radius: 12px;
   margin-left: 40px;
   font-size: 1.5vw;
+  cursor: pointer;
 }
 
 ul:hover {
