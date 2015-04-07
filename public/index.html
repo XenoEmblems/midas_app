@@ -38,26 +38,26 @@
 	<div id="user-info-header"></div>
 
 	<div id="objective">
-		<h2 class="objectives-head">Objectives</h2>
+		<h2 class="section-head objectives-head">Objectives</h2>
 		<span class="objectives-body">To obtain a position as a junior full-stack developer with an emphasis on clean, performant Javascript coding.</span>
 	</div>
 
 <div id="job-ops">
-	<h2 class="job-ops-head">Job Opportunities</h2>
+	<h2 class="section-head job-ops-head">Job Opportunities</h2>
 			<button class="show-me-jobs">$HOW ME ALL THE JOB$!</button>
 			<div id="jobs-list"></div>
 </div>
 
 <div id="work-experience">
-	<h2 class="work-experience-head">Work Experience</h2>
+	<h2 class="section-head work-experience-head">Work Experience</h2>
 	<div id="experience-body">
-		<span class="ga-info">General Assembly Web Development Immersive New York, NY March 2015 - May 2015</span><br>
+		<div class="ga-info preview">General Assembly Web Development Immersive New York, NY March 2015 - May 2015</div>
 		<p class="experience-text">Developed 20+ web front-end interfaces with html, css, and JQuery. Organized events and views with Backbone. Managed group workflow and version control with Git. Organized RESTful routes with Express. Managed dependencies with Require. Deployed sites both locally and on Heroku. Accessed 15+ external APIs with Request and managed PostGres database schemas and migrations with Sequelize.</p>
 	</div>
 </div>
 
 <div id="tech-skills">
-	<h2 class="tech-skills-head">Technical Skills</h2>
+	<h2 class="section-head tech-skills-head">Technical Skills</h2>
 	<div id="tech-skills-body">
 		<p class="experience-text">Node.js, Backbone.js, Express.js, Require.js, Request.js, PostGres, Sequelize, JQuery, Javascript, HTML5, CSS3, Git, General Wizadry.</p>
 	</div>
@@ -114,10 +114,10 @@
 	<template id="preview-template">
 	    <div class="job-post-preview" data-job="{{id}}">
 				<ul class="preview">
-					<li>{{job_title}}</li>
-					<li>{{employer_name}}</li>
-					<li>{{location}}</li>
-					<li>{{date_posted}}</li>
+					<li class="job-title">{{job_title}}</li>
+					<li class="job-employer-name">{{employer_name}}</li>
+					<li class="job-location">{{location}}</li>
+					<li class="job-date-posted">{{date_posted}}</li>
 				</ul>
 	    </div>
 		</div>
