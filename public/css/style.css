@@ -12,7 +12,7 @@ body {
   font-family: 'Lato', sans-serif;
   font-weight: normal;
   text-align: left;
-  background: lightgrey;
+  background: #B8860B;
 }
 
 #rounded {
@@ -285,7 +285,7 @@ button {
 	color: white;
 	background: rgba(0, 0, 0, 0.8);
   left: 10%;
-  top: 0px;
+  top: 100px;
   width: 75%;
   height: 75%;
   text-align: center;
