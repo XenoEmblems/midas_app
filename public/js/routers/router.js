@@ -18,36 +18,36 @@ App.Routers.JobPostRouter = Backbone.Router.extend({
 
 
 
-  routes: {
-    // '': 'index',
-    '/job_posts': 'listView',
-    '/job_posts/:id': 'showSingleView',
-    '/employer/:id': 'showEmployer',
-    '/positions/:id': 'showPosition'
-  },
-
-  listView: function() {
-    this.empty();
-    $('#main').html(new App.jobsView.$el);
-  },
-
-  showUserForm: function() {
-    $('#user-form-header').html(new App.userFormView.$el);
-  },
-
-  showSingleView: function() {
-    var job = new App.Models.JobPost({ job_ID: id });
-    App.jobPostModal.render();
-  },
-
-  showEmployer: function() {
-    var employer = new App.Models.Employer({ employer_id: id });
-    App.employerPostModal.render();
-  },
-
-  showPosition: function() {
-    var position = new App.Models.Position({ position_id: id });
-    App.positionModal.render();
-  }
+  //routes: {
+  //  // '': 'index',
+  //  '/job_posts': 'listView',
+  //  '/job_posts/:id': 'showSingleView',
+  //  '/employer/:id': 'showEmployer',
+  //  '/positions/:id': 'showPosition'
+  //},
+//
+  //listView: function() {
+  //  this.empty();
+  //  $('#main').html(new App.jobsView.$el);
+  //},
+//
+  //showUserForm: function() {
+  //  $('#user-form-header').html(new App.userFormView.$el);
+  //},
+//
+  //showSingleView: function() {
+  //  var job = new App.Models.JobPost({ job_ID: id });
+  //  App.jobPostModal.render();
+  //},
+//
+  //showEmployer: function() {
+  //  var employer = new App.Models.Employer({ employer_id: id });
+  //  App.employerPostModal.render();
+  //},
+//
+  //showPosition: function() {
+  //  var position = new App.Models.Position({ position_id: id });
+  //  App.positionModal.render();
+  //}
 
 });

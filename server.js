@@ -76,7 +76,7 @@ app.get('/job_posts/query', function (req,res) {
 //Get all the Jobs
 app.get('/job_posts', function(req, res) {
   JobPost
-    .findAll()
+    .findAll({limit: 700, order: [['id', 'DESC']]})
     .then(function(jobposts) {
       res.send(jobposts);
     });
