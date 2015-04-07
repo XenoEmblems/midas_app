@@ -37,6 +37,7 @@ var queryArray = [
 
 module.exports =  {
 	query: function() {
+		console.log(process.env.INDEED_KEY);
 		for (i = 0; i < queryArray.length; i++) {
 			request.get(queryArray[i], function(error, response, body){
 				xml2js.parseString(body, function (err, result) {

@@ -9,6 +9,16 @@ var config    = require(__dirname + '/../config/config.json')[env];
 var sequelize = new Sequelize(config.database, config.username, config.password, config);
 var db        = {};
 
+if (process.env.HEROKU_POSTGRESQL_WHITE_URL) {
+  sequelize = new Sequelie(process.env.HEROKU_POSTGRESQL_WHITE_URL, {
+    dialect: 'postgres',
+    protocol: 'postgres',
+    logging: true
+  })
+} else {
+  var sequelize = new Sequelize(config.database, config.username, config.password, config)
+}
+
 fs
   .readdirSync(__dirname)
   .filter(function(file) {
