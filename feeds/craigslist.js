@@ -38,36 +38,40 @@ module.exports =  {
 			request.get(queryArray[i], function(error, response, body){
 				xml2js.parseString(body, function (err, result) {
 	    	 		var resultsArray = result["rdf:RDF"].item;
-	    	 		resultsArray.forEach(function(job) {
-	    	 		// Gets the Date...
-	    			var str = job['dc:date'][0];
-	    			//Slices it into the first 10 Characters.
-						var date = str.slice(0, 10)
+	    	 		if (resultsArray) {
 
-						var data = {
-							job_title: job.title[0],
-							post_url: job.link[0],
-							post_content: job.description[0],
-							date_posted: date
-						};
+	    	 			resultsArray.forEach(function(job) {
+	    	 		// Gets the Date...
+	    					var str = job['dc:date'][0];
+	    			//Slices it into the first 10 Characters.
+							var date = str.slice(0, 10)
+
+							var data = {
+								job_title: job.title[0],
+								post_url: job.link[0],
+								post_content: job.description[0],
+								date_posted: date
+							};
 						// checks db to see if we have this already	
-						JobPost
-							.count({
-								where: {
-									post_url: data.post_url
-								}
+							JobPost
+								.count({
+									where: {
+										post_url: data.post_url
+									}
+								})
+								.then(function (count) {
+									if (!count) {
+										JobPost.create(data); //if not, make a new one
+									}
+								});
+
 							})
-							.then(function (count) {
-								if (!count) {
-									JobPost.create(data); //if not, make a new one
-								}
-							});
+	    	 		}
 						
 
 
-						});
+					});
 				});
-			});
+			}
 		}
-	}
-};
+	};
