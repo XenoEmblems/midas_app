@@ -16,7 +16,7 @@ var queryArray = ['http://newyork.craigslist.org/search/sof?query=node.js+-senio
 'http://newyork.craigslist.org/search/sof?query=jQuery+-senior+-sr+-lead+-game+-mobile&format=rss',
 'http://newyork.craigslist.org/search/sof?query=front+end+-senior+-sr+-lead+-game+-mobile&format=rss',
 'http://newyork.craigslist.org/search/sof?query=back+end+-senior+-sr+-lead+-game+-mobile&format=rss',
-'http://newyork.craigslist.org/search/sof?query=ruby+-senior+-sr+-lead+-game+-mobile+-mobile&format=rss',
+'http://newyork.craigslist.org/search/sof?query=ruby+-senior+-sr+-lead+-game+-mobile&format=rss',
 'http://newyork.craigslist.org/search/sof?query=html+developer+-senior+-sr+-lead+-game+-mobile&format=rss',
 'http://newyork.craigslist.org/search/sof?query=junior+java+-senior+-sr+-lead+-game+-mobile&format=rss',
 'http://newyork.craigslist.org/search/sof?query=HTML%2FCSS+developer+-senior+-sr+-lead+-game+-mobile&format=rss',
