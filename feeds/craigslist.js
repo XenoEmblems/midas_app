@@ -24,6 +24,7 @@ var queryArray = ['http://newyork.craigslist.org/search/sof?query=node.js+-senio
 'http://newyork.craigslist.org/search/sof?query=mySQL+-senior+-sr+-lead+-game+-mobile&format=rss',
 'http://newyork.craigslist.org/search/sof?query=web+application+-senior+-sr+-lead+-game+-mobile&format=rss',
 'http://newyork.craigslist.org/search/sof?query=ruby+on+rails+-senior+-sr+-lead+-game+-mobile&format=rss',
+'http://newyork.craigslist.org/search/sof?query=backbone+-senior+-sr+-lead+-game+-mobile&format=rss',
 'http://newyork.craigslist.org/search/sof?query="JSON"+-senior+-sr+-lead+-game+-mobile&format=rss',
 'http://newyork.craigslist.org/search/sof?query="REST"+-senior+-sr+-lead+-game+-mobile&format=rss'];
 
