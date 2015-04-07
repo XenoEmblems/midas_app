@@ -12,7 +12,7 @@ body {
   font-family: 'Lato', sans-serif;
   font-weight: normal;
   text-align: left;
-  background: lightgrey;
+  background: #B8860B;
 }
 
 #rounded {
@@ -212,8 +212,8 @@ p {
 }
 
 #user-modal {
-  height: 55%;
-  width: 50%;
+  height: 65%;
+  width: 60%;
   background-image: url('http://www.nuthinbutagifthang.com/wp-content/uploads/2013/06/Rick-Ross-Throwing-Money.gif');
   background-position:50% 50%;
   background-size:cover;
@@ -221,7 +221,7 @@ p {
   color: white;
   overflow-y: auto;
   padding: 5px;
-  margin-left: 15%;
+  margin-left: 10%;
 }
 
 .welcome {
@@ -305,7 +305,7 @@ button {
 	color: white;
 	background: rgba(0, 0, 0, 0.8);
   left: 10%;
-  top: 0px;
+  top: 50px;
   width: 75%;
   height: 75%;
   text-align: center;
