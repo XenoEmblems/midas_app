@@ -22,6 +22,7 @@ $(function() {
 	App.jobsRouter = new App.Routers.JobPostRouter();
 });
 
+
 /*var node = function() {
 	var queryUrl = '/job_posts/query?=node';
 
@@ -38,3 +39,22 @@ $(function() {
 		});
 	});
 };*/
+
+	// var node = function() {
+	// 		var queryUrl = '/job_posts/query?=node';
+	//
+	// 		$.ajax({
+	// 			url: queryUrl,
+	// 			method= 'GET'
+	// 		}).done(function(response) {
+	// 			var results = response.data;
+	// 			var data = {
+	// 					job_title: data.job_title;
+	// 					employer_name: data.employer_name;
+	// 					location: data.location;
+	// 					date_posted: data.date_posted;
+	// 		};
+	// 		return
+	// 		});
+	// };
+

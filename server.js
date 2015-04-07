@@ -65,14 +65,6 @@ app.get('/job_posts/query', function (req,res) {
         post_content: {
           $or: [
           {$like: queryParams}
-          // {$like: '%Rails%'},
-          // {$like: '%Backbone%'},
-          // {$like: '%Express%'},
-          // {$like: '%PostGres%'},
-          // {$like: '%JQuery%'},
-          // {$like: '%HTML%'},
-          // {$like: '%CSS%'},
-          // {$like: '%Git%'}
         ]}
       }
     }).then(function(jobposts) {
