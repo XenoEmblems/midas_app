@@ -61,6 +61,8 @@ app.get('/job_posts/query', function (req,res) {
   console.log(queryParams);
     JobPost
     .findAll({
+      limit: 500,
+      order: [['id', 'DESC']],
       where: {
         post_content: {
           $or: [
