@@ -4,6 +4,7 @@ var application_root = __dirname,
     path             = require('path'),
     logger           = require('morgan'),
     models           = require('./models'),
+    sequelize        = require('sequelize'),
     JobPost          = models.job_posts,
     Employer         = models.employers,
     Position         = models.positions,
@@ -21,13 +22,13 @@ var app = express();
    both craigslist and the muse when the server relaunches
                                   */
 
-feeds.test();
-feeds.testtwo();
-feeds.testIndeed();
+feeds.getMuse();
+//feeds.getCraigs();
+feeds.getIndeed();
 
-var testhours    = setInterval(function(){feeds.test()}, 7190000);
-var testhourstwo = setInterval(function(){feeds.testtwo()}, 7200000);
-var testhoursthree = setInterval(function(){feeds.testIndeed()}, 7180000);
+var timedMuse    = setInterval(function(){feeds.getMuse()}, 7190000);
+//var timedCraigs = setInterval(function(){feeds.getCraigs()}, 7200000);
+var timedIndeed = setInterval(function(){feeds.getIndeed()}, 7180000);
 // setInterval(feeds.test(),7200000);
 // setInterval(feeds.testtwo(),400);
 
@@ -43,6 +44,43 @@ app.use( express.static( path.join( application_root, 'browser' )));
 
 
 // Routes
+
+//Jobs Query Route
+
+// app.get('/job_posts/query', function (req, res) {
+//   JobPost
+//   .query("SELECT * FROM job_posts WHERE post_content LIKE %node%", { type: JobPost.QueryTypes.SELECT})
+//   .then(function(jobpost) {
+//       res.send(jobpost);
+//   });
+// });
+
+//Query Route
+app.get('/job_posts/query', function (req,res) {
+  var queryParams = '%' + req.query.q + '%';
+  console.log(queryParams);
+    JobPost
+    .findAll({
+      where: {
+        post_content: {
+          $or: [
+          {$like: queryParams}
+          // {$like: '%Rails%'},
+          // {$like: '%Backbone%'},
+          // {$like: '%Express%'},
+          // {$like: '%PostGres%'},
+          // {$like: '%JQuery%'},
+          // {$like: '%HTML%'},
+          // {$like: '%CSS%'},
+          // {$like: '%Git%'}
+        ]}
+      }
+    }).then(function(jobposts) {
+      res.send(jobposts);
+    });
+});
+
+
 //Get all the Jobs
 app.get('/job_posts', function(req, res) {
   JobPost
@@ -52,6 +90,7 @@ app.get('/job_posts', function(req, res) {
     });
 
 });
+
 //Read the Jobs
 app.get('/job_posts/:id', function(req, res) {
   JobPost
@@ -66,20 +105,6 @@ app.get('/job_posts/:id', function(req, res) {
        });
 });
 
-//Jobs Query Route
-
-// app.get('/job_posts/query', function (req, res) {
-//   JobPost
-//     .findAll({
-//       where: { req.query },
-//         include: [
-//           { job_title: }
-//         ]}).then
-//       }
-//     })
-//
-// })
-
 //Create the Jobs
 app.post('/job_posts', function(req, res) {
   JobPost
@@ -88,6 +113,7 @@ app.post('/job_posts', function(req, res) {
       res.send(newPost);
     });
 });
+
 
 //Update the Jobs
 app.put('/job_posts/:id', function(req, res) {
