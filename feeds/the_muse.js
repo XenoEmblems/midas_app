@@ -59,7 +59,7 @@ module.exports =  {
 								JobPost.create(data); //if not, make a new one
 							}
 						});
-
+					
 
 
 				})
