@@ -23,7 +23,7 @@ var app = express();
 
 feeds.getMuse();
 //feeds.getCraigs();
-feeds.testIndeed();
+feeds.getIndeed();
 
 var timedMuse    = setInterval(function(){feeds.getMuse()}, 7190000);
 //var timedCraigs = setInterval(function(){feeds.getCraigs()}, 7200000);
