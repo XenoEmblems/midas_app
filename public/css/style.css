@@ -2,16 +2,26 @@
 @import url(http://fonts.googleapis.com/css?family=Arvo);
 @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:700);
 
-html, body {
-  min-height: 100%;
-}
 
+/*html, body {
+  min-height: 100%;
+}*/
 body {
-  position: relative;
+  margin: 0;
+  padding: 0;
   font-family: 'Lato', sans-serif;
   font-weight: normal;
   text-align: left;
-  margin: 45px;
+  background: lightgrey;
+}
+
+#rounded {
+  background: white;
+  border-radius: 40px;
+  border: 20px solid lightgrey;
+  padding: 40px;
+  margin: 25px;
+  box-shadow: 5px 5px 30px #000000;
 }
 
 body.modal-open {
@@ -30,6 +40,25 @@ body.modal-open {
   font-family: Arvo;
 }
 
+/*#top, #bottom, #left, #right {
+
+  background: #A6A6A6;
+  position: fixed;
+  border-radius: 20px;
+}
+#left, #right {
+  top: 0; bottom: 0;
+  width: 15px;
+}
+#left { left:0; }
+#right { right:0; }
+
+#top, #bottom {
+  left: 0; right: 0;
+  height: 15px;
+}
+#top { top:0; }
+#bottom { bottom: 0; }*/
 
 /*****************/
    /*COLLECTION VIEW*/
