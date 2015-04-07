@@ -22,7 +22,7 @@ $(function() {
 	App.jobsRouter = new App.Routers.JobPostRouter();
 });
 
-var node = function() {
+/*var node = function() {
 	var queryUrl = '/job_posts/query?=node';
 
 	$.ajax({
@@ -35,6 +35,6 @@ var node = function() {
 			location: data.location;
 			date_posted: data.date_posted;
 		}
+		});
 	});
-	});
-};
+};*/
