@@ -8,15 +8,15 @@ module.exports = {
   //		glassdoor = require("./glassdoor.js"),
   //		muse = require("./the_muse.js");
 
-  		test: function() {	
+  		getMuse: function() {	
         muse.getJobs();
       },
       
-      testtwo: function() {
+      getCraigs: function() {
         craigslist.queryNode();
       },
 
-      testIndeed: function(){
+      getIndeed: function(){
         indeed.query();
       },
 

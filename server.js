@@ -22,13 +22,13 @@ var app = express();
    both craigslist and the muse when the server relaunches
                                   */
 
-feeds.test();
-feeds.testtwo();
-feeds.testIndeed();
+feeds.getMuse();
+//feeds.getCraigs();
+feeds.getIndeed();
 
-var testhours    = setInterval(function(){feeds.test()}, 7190000);
-var testhourstwo = setInterval(function(){feeds.testtwo()}, 7200000);
-var testhoursthree = setInterval(function(){feeds.testIndeed()}, 7180000);
+var timedMuse    = setInterval(function(){feeds.getMuse()}, 7190000);
+//var timedCraigs = setInterval(function(){feeds.getCraigs()}, 7200000);
+var timedIndeed = setInterval(function(){feeds.getIndeed()}, 7180000);
 // setInterval(feeds.test(),7200000);
 // setInterval(feeds.testtwo(),400);
 
