@@ -113,10 +113,12 @@
 
 	<template id="preview-template">
 	    <div class="job-post-preview" data-job="{{id}}">
-				<span>{{job_title}}</span>
-				<span>{{employer_name}}</span>
-				<span>{{location}}</span>
-				<span>{{date_posted}}</span>
+				<ul class="preview">
+					<li>{{job_title}}</li>
+					<li>{{employer_name}}</li>
+					<li>{{location}}</li>
+					<li>{{date_posted}}</li>
+				</ul>
 	    </div>
 		</div>
 	</template>
@@ -165,3 +167,10 @@
 
 </body>
 </html>
+
+<!-- 
+{{#if}}
+<li>{{job_title}} || {{employer_name}} || {{location}} || {{date_posted}}</li>
+{{else}}
+<li>{{job_title}} || {{date_posted}}</li>
+{{/if}} -->
