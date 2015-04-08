@@ -1,6 +1,7 @@
 
 // calls indeed xml query and parses the response
-// and adds new models to our db
+// adds new models to our db after checking for uniqueness
+// Indeed key saved as an environment variable
 
 var request 	= require('request'),
 	bodyParser  = require('body-parser'),

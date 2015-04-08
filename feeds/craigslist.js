@@ -1,6 +1,8 @@
 
 // calls craigslist rss query and parses rss feed
 // and adds new models to our db
+// will not run on Heroku due to Craigslist blocking AWS IP addresses
+// runs on smaller networks just fine
 
 var request 	= require('request'),
 	bodyParser  = require('body-parser'),

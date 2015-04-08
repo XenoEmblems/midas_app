@@ -1,3 +1,12 @@
+/*
+
+Queries Glassdoor API for either "position" or "employer" data.
+Glassdoor key and id saved as environment variables.
+Callback passed through /feeds index from original caller
+
+*/
+
+
 var request 		= require('request'),
 	bodyParser  	= require('body-parser'),
 	xml2js			= require('xml2js'),
