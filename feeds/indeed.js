@@ -57,7 +57,7 @@ module.exports =  {
 						JobPost
 							.count({
 								where: {
-									post_url: data.post_url
+									post_content: data.post_content
 								}
 							})
 							.then(function (count) {
