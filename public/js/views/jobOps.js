@@ -9,11 +9,18 @@ App.Views.JobOps = Backbone.View.extend({
 		'click #show-ruby': 'showRubyJobs',
 		'click #show-front-end': 'showFrontEndJobs',
 		'click #show-git': 'showGitJobs',
+		'click #user-name': 'showUserJobs',
 		'keypress': 'showJobsToo'
 	},
 
 	showJobs: function(){
+		console.log('this button clicked');
 		$('.special-buttons').empty();
+		this.$el.append(App.jobsView.$el);
+	},
+
+	showUserJobs: function() {
+		console.log('back clicked');
 		this.$el.append(App.jobsView.$el);
 	},
 
@@ -49,7 +56,7 @@ App.Views.JobOps = Backbone.View.extend({
 			App.jobOps.showBackbone();
 		})
 
-	},	
+	},
 
 	showRubyJobs: function(){
 		$('button').remove();
@@ -71,7 +78,7 @@ App.Views.JobOps = Backbone.View.extend({
 			App.jobOps.showFrontEnd();
 		})
 
-	},	
+	},
 
 	showGitJobs: function(){
 		$('button').remove();
@@ -82,7 +89,7 @@ App.Views.JobOps = Backbone.View.extend({
 			App.jobOps.showFrontEnd();
 		})
 
-	},	
+	},
 
 	showJavascript: function(){
 		$('.special-buttons').empty();
