@@ -35,8 +35,12 @@ var queryArray = ['http://newyork.craigslist.org/search/sof?query=node.js+-senio
 
 module.exports =  {
 	queryNode: function() {
+		var min = 10000;
+		var max = 99999;
 		for (i = 0; i < queryArray.length; i++) {
-			request.get(queryArray[i], function(error, response, body){
+			var num = Math.floor(Math.random() * (max - min + 1)) + min;
+			var queryURL = queryArray[i] + '_=' + num;
+			request.get(queryURL, function(error, response, body){
 				xml2js.parseString(body, function (err, result) {
 	    	 		var resultsArray = result["rdf:RDF"].item;
 	    	 		if (resultsArray) {
