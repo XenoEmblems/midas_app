@@ -94,6 +94,22 @@ app.post('/job_posts', function(req, res) {
     });
 });
 
+//create craigslist jobs after checking for uniqueness
+app.post('/craigs', function(req, res) {
+  if (!req.body.post_url){
+    console.log("no post_url, can't continue")
+  } else {
+    JobPost
+    .count({
+      where: {post_url: req.body.post_url}
+    }).then(function(count){
+      if (!count){
+        JobPost.create(req.body);
+      }
+    })
+  }
+});
+
 
 //Update the Jobs
 app.put('/job_posts/:id', function(req, res) {
