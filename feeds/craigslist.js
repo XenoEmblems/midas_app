@@ -40,6 +40,7 @@ module.exports =  {
 		for (i = 0; i < queryArray.length; i++) {
 			var num = Math.floor(Math.random() * (max - min + 1)) + min;
 			var queryURL = queryArray[i] + '_=' + num;
+			console.log(queryURL);
 			request.get(queryURL, function(error, response, body){
 				xml2js.parseString(body, function (err, result) {
 	    	 		var resultsArray = result["rdf:RDF"].item;
