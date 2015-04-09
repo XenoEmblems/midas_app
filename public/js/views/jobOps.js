@@ -8,7 +8,7 @@ App.Views.JobOps = Backbone.View.extend({
 		'click #show-backbone': 'showBackboneJobs',
 		'click #show-ruby': 'showRubyJobs',
 		'click #show-front-end': 'showFrontEndJobs',
-		'click #show-git': 'showGitJobs',
+		'click #show-internships': 'showInternshipJobs',
 		'click #user-name': 'showUserJobs',
 		'keypress': 'showJobsToo'
 	},
@@ -80,13 +80,13 @@ App.Views.JobOps = Backbone.View.extend({
 
 	},
 
-	showGitJobs: function(){
+	showInternshipJobs: function(){
 		$('button').remove();
-		$.ajax({url: '/job_posts/query?q=git', method:'GET'})
+		$.ajax({url: '/job_posts/title_query?q=Intern', method:'GET'})
 		.done(function(data){
-			App.gitJobs = new App.Collections.JobPosts(data);
-			App.gitList = new App.Views.JobPostList({collection: App.gitJobs});
-			App.jobOps.showFrontEnd();
+			App.internshipsJobs = new App.Collections.JobPosts(data);
+			App.internshipsList = new App.Views.JobPostList({collection: App.internshipsJobs});
+			App.jobOps.showInternships();
 		})
 
 	},
@@ -116,9 +116,9 @@ App.Views.JobOps = Backbone.View.extend({
 		this.$el.append(App.frontEndList.$el);
 	},
 
-	showGit: function(){
+	showInternships: function(){
 		$('.special-buttons').empty();
-		this.$el.append(App.gitList.$el);
+		this.$el.append(App.internshipsList.$el);
 	},
 
 
