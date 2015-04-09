@@ -60,6 +60,26 @@ app.get('/job_posts/query', function (req,res) {
     });
 });
 
+//Searches the title
+app.get('/job_posts/title_query', function (req,res) {
+  var queryParams = '%' + req.query.q + '%';
+  console.log(queryParams);
+    JobPost
+    .findAll({
+      limit: 500,
+      order: [['id', 'DESC']],
+      where: {
+        job_title: {
+          $or: [
+          {$like: queryParams}
+        ]}
+      }
+    }).then(function(jobposts) {
+      res.send(jobposts);
+    });
+});
+
+
 
 //Get all the Jobs - Limited to 700 & LIFO sorted
 app.get('/job_posts', function(req, res) {
