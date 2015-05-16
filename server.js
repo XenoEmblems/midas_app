@@ -15,22 +15,17 @@ var app = express();
 
 
 
-/*
-
-  TEST FUNCTION TO FILL DATABASE
-   un-comment "feeds.test()" below and it will check
-   both craigslist and the muse when the server relaunches
-                                  */
-
+// Populates database on server start
 feeds.getMuse();
-//feeds.getCraigs();
 feeds.getIndeed();
+//feeds.getCraigs(); //switched off for Heroku
 
+// Adds to database every 2 hours
 var timedMuse    = setInterval(function(){feeds.getMuse()}, 7190000);
-//var timedCraigs = setInterval(function(){feeds.getCraigs()}, 7200000);
 var timedIndeed = setInterval(function(){feeds.getIndeed()}, 7180000);
-// setInterval(feeds.test(),7200000);
-// setInterval(feeds.testtwo(),400);
+//var timedCraigs = setInterval(function(){feeds.getCraigs()}, 7200000);
+
+
 
 
 
@@ -45,34 +40,38 @@ app.use( express.static( path.join( application_root, 'browser' )));
 
 // Routes
 
-//Jobs Query Route
 
-// app.get('/job_posts/query', function (req, res) {
-//   JobPost
-//   .query("SELECT * FROM job_posts WHERE post_content LIKE %node%", { type: JobPost.QueryTypes.SELECT})
-//   .then(function(jobpost) {
-//       res.send(jobpost);
-//   });
-// });
-
-//Query Route
+//Query Route  -- Used for specific scoped queries 
 app.get('/job_posts/query', function (req,res) {
   var queryParams = '%' + req.query.q + '%';
   console.log(queryParams);
     JobPost
     .findAll({
+      limit: 500,
+      order: [['id', 'DESC']],
       where: {
         post_content: {
           $or: [
           {$like: queryParams}
-          // {$like: '%Rails%'},
-          // {$like: '%Backbone%'},
-          // {$like: '%Express%'},
-          // {$like: '%PostGres%'},
-          // {$like: '%JQuery%'},
-          // {$like: '%HTML%'},
-          // {$like: '%CSS%'},
-          // {$like: '%Git%'}
+        ]}
+      }
+    }).then(function(jobposts) {
+      res.send(jobposts);
+    });
+});
+
+//Searches the title
+app.get('/job_posts/title_query', function (req,res) {
+  var queryParams = '%' + req.query.q + '%';
+  console.log(queryParams);
+    JobPost
+    .findAll({
+      limit: 500,
+      order: [['id', 'DESC']],
+      where: {
+        job_title: {
+          $or: [
+          {$like: queryParams}
         ]}
       }
     }).then(function(jobposts) {
@@ -81,10 +80,11 @@ app.get('/job_posts/query', function (req,res) {
 });
 
 
-//Get all the Jobs
+
+//Get all the Jobs - Limited to 700 & LIFO sorted
 app.get('/job_posts', function(req, res) {
   JobPost
-    .findAll()
+    .findAll({limit: 700, order: [['id', 'DESC']]})
     .then(function(jobposts) {
       res.send(jobposts);
     });
@@ -112,6 +112,22 @@ app.post('/job_posts', function(req, res) {
     .then(function(newPost) {
       res.send(newPost);
     });
+});
+
+//create craigslist jobs after checking for uniqueness
+app.post('/craigs', function(req, res) {
+  if (!req.body.post_url){
+    console.log("no post_url, can't continue")
+  } else {
+    JobPost
+    .count({
+      where: {post_url: req.body.post_url}
+    }).then(function(count){
+      if (!count){
+        JobPost.create(req.body);
+      }
+    })
+  }
 });
 
 

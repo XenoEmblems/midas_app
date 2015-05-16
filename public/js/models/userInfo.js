@@ -1,3 +1,9 @@
+/*
+
+	Model to be used for user persistence 
+
+*/
+
 App.Models.UserInfo = Backbone.Model.extend ({
 
 

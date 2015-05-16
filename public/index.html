@@ -5,6 +5,9 @@
 	<title>midas</title>
 
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon"
+	      type="image/png"
+	      href="http://www.favicon.cc/logo3d/13114.png">
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
@@ -32,8 +35,16 @@
 </head>
 
 <body>
+<div id="rounded">
 
-	<h1></h1>
+	<!--<h1></h1>-->
+
+	<!--<div id="left"></div>
+	<div id="right"></div>
+	<div id="top"></div>
+	<div id="bottom"></div>-->
+
+
 
 	<div id="user-info-header"></div>
 
@@ -42,10 +53,19 @@
 		<span class="objectives-body">To obtain a position as a junior full-stack developer with an emphasis on clean, performant Javascript coding.</span>
 	</div>
 
+
 <div id="job-ops">
 	<h2 class="section-head job-ops-head">Job Opportunities</h2>
-			<button class="show-me-jobs">$HOW ME ALL THE JOB$!</button>
-			<div id="jobs-list"></div>
+			<div class="special-buttons">
+                <button class="show-me-jobs" id="show-all-jobs">$HOW ME ALL THE JOB$!</button><br>
+                <button type="sub" id="show-javascript">JAVASCRIPT JOB$!</button>
+                <button type="sub" id="show-node">NODE JOB$!</button>
+                <button type="sub" id="show-ruby">RUBY JOB$!</button>
+                <button type="sub" id="show-backbone">BACKBONE JOB$!</button>
+                <button type="sub" id="show-internships">INTERNSHIP$!</button>
+                <button type="sub" id="show-front-end"> FRONT-END JOB$!</button><br>
+          </div>
+          <div id="jobs-list"></div>
 </div>
 
 <div id="work-experience">
@@ -63,16 +83,16 @@
 	</div>
 </div>
 
-	<section id="modal">
-		<div id="user-modal" class="modal"></div>
-		<div id="show-modal" class="modal"></div>
-	</section>
-
+		<section id="modal">
+			<div id="user-modal" class="modal"></div>
+			<div id="show-modal" class="modal"></div>
+		</section>
+</div>
 
 <!--TEMPLATES-->
 
 	<template id="user-form-template">
-		<h3 class="welcome">Welcome to Rozay.N.Ur.Résumé</h3>
+		<h3 class="welcome">Welcome to Rozay_N_Ur_Résumé</h3>
 		<div id="user-form">
 			<h4 class="name">Enter Your Name Below:</h4>
 			<p><input type="text" id="user-name-form" placeholder="First and Last Name"></p><br>
@@ -167,10 +187,3 @@
 
 </body>
 </html>
-
-<!--
-{{#if}}
-<li>{{job_title}} || {{employer_name}} || {{location}} || {{date_posted}}</li>
-{{else}}
-<li>{{job_title}} || {{date_posted}}</li>
-{{/if}} -->

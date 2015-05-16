@@ -1,3 +1,7 @@
+/*
+  module to namespace and group API/feed logic
+*/
+
 var 	craigslist 	 = require("./craigslist.js")
 		  muse 		     = require("./the_muse.js")
       glassdoor    = require("./glassdoor.js")
