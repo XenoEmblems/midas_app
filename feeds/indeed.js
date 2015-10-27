@@ -1,6 +1,7 @@
 
 // calls indeed xml query and parses the response
-// and adds new models to our db
+// adds new models to our db after checking for uniqueness
+// Indeed key saved as an environment variable
 
 var request 	= require('request'),
 	bodyParser  = require('body-parser'),
@@ -27,6 +28,7 @@ var queryArray = [
 	'http://api.indeed.com/ads/apisearch?publisher=' + process.env.INDEED_KEY + '&q=web+application+-senior+-sr+-lead+-game+-mobile&l=new+york%2C+ny&sort=&radius=&st=&jt=&start=0&limit=100&fromage=&filter=&latlong=1&co=us&chnl=&userip=1.2.3.4&useragent=Mozilla/%2F4.0%28Firefox%29&v=2',
 	'http://api.indeed.com/ads/apisearch?publisher=' + process.env.INDEED_KEY + '&q=ruby+on+rails+-senior+-sr+-lead+-game+-mobile&l=new+york%2C+ny&sort=&radius=&st=&jt=&start=0&limit=100&fromage=&filter=&latlong=1&co=us&chnl=&userip=1.2.3.4&useragent=Mozilla/%2F4.0%28Firefox%29&v=2',
 	'http://api.indeed.com/ads/apisearch?publisher=' + process.env.INDEED_KEY + '&q="JSON"+-senior+-sr+-lead+-game+-mobile&l=new+york%2C+ny&sort=&radius=&st=&jt=&start=0&limit=100&fromage=&filter=&latlong=1&co=us&chnl=&userip=1.2.3.4&useragent=Mozilla/%2F4.0%28Firefox%29&v=2',
+	'http://api.indeed.com/ads/apisearch?publisher=' + process.env.INDEED_KEY + '&q=backbone+-senior+-sr+-lead+-game+-mobile&l=new+york%2C+ny&sort=&radius=&st=&jt=&start=0&limit=100&fromage=&filter=&latlong=1&co=us&chnl=&userip=1.2.3.4&useragent=Mozilla/%2F4.0%28Firefox%29&v=2',
 	'http://api.indeed.com/ads/apisearch?publisher=' + process.env.INDEED_KEY + '&q="REST"+-senior+-sr+-lead+-game+-mobile&l=new+york%2C+ny&sort=&radius=&st=&jt=&start=0&limit=100&fromage=&filter=&latlong=1&co=us&chnl=&userip=1.2.3.4&useragent=Mozilla/%2F4.0%28Firefox%29&v=2'
 ];
 
@@ -36,6 +38,7 @@ var queryArray = [
 									
 
 module.exports =  {
+
 	query: function() {
 		console.log(process.env.INDEED_KEY);
 		for (i = 0; i < queryArray.length; i++) {
@@ -55,7 +58,7 @@ module.exports =  {
 						JobPost
 							.count({
 								where: {
-									post_url: data.post_url
+									post_content: data.post_content
 								}
 							})
 							.then(function (count) {

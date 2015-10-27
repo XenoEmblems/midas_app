@@ -4,6 +4,7 @@ var application_root = __dirname,
     path             = require('path'),
     logger           = require('morgan'),
     models           = require('./models'),
+    sequelize        = require('sequelize'),
     JobPost          = models.job_posts,
     Employer         = models.employers,
     Position         = models.positions,
@@ -14,22 +15,17 @@ var app = express();
 
 
 
-/*
-
-  TEST FUNCTION TO FILL DATABASE
-   un-comment "feeds.test()" below and it will check
-   both craigslist and the muse when the server relaunches
-                                  */
-
+// Populates database on server start
 feeds.getMuse();
-//feeds.getCraigs();
 feeds.getIndeed();
+//feeds.getCraigs(); //switched off for Heroku
 
+// Adds to database every 2 hours
 var timedMuse    = setInterval(function(){feeds.getMuse()}, 7190000);
-//var timedCraigs = setInterval(function(){feeds.getCraigs()}, 7200000);
 var timedIndeed = setInterval(function(){feeds.getIndeed()}, 7180000);
-// setInterval(feeds.test(),7200000);
-// setInterval(feeds.testtwo(),400);
+//var timedCraigs = setInterval(function(){feeds.getCraigs()}, 7200000);
+
+
 
 
 
@@ -43,15 +39,58 @@ app.use( express.static( path.join( application_root, 'browser' )));
 
 
 // Routes
-//Get all the Jobs
+
+
+//Query Route  -- Used for specific scoped queries 
+app.get('/job_posts/query', function (req,res) {
+  var queryParams = '%' + req.query.q + '%';
+  console.log(queryParams);
+    JobPost
+    .findAll({
+      limit: 500,
+      order: [['id', 'DESC']],
+      where: {
+        post_content: {
+          $or: [
+          {$like: queryParams}
+        ]}
+      }
+    }).then(function(jobposts) {
+      res.send(jobposts);
+    });
+});
+
+//Searches the title
+app.get('/job_posts/title_query', function (req,res) {
+  var queryParams = '%' + req.query.q + '%';
+  console.log(queryParams);
+    JobPost
+    .findAll({
+      limit: 500,
+      order: [['id', 'DESC']],
+      where: {
+        job_title: {
+          $or: [
+          {$like: queryParams}
+        ]}
+      }
+    }).then(function(jobposts) {
+      res.send(jobposts);
+    });
+});
+
+
+
+//Get all the Jobs - Limited to 700 & LIFO sorted
 app.get('/job_posts', function(req, res) {
   JobPost
-    .findAll()
+    .findAll({limit: 700, order: [['id', 'DESC']]})
     .then(function(jobposts) {
       res.send(jobposts);
     });
 
 });
+
 //Read the Jobs
 app.get('/job_posts/:id', function(req, res) {
   JobPost
@@ -66,20 +105,6 @@ app.get('/job_posts/:id', function(req, res) {
        });
 });
 
-//Jobs Query Route
-
-// app.get('/job_posts/query', function (req, res) {
-//   JobPost
-//     .findAll({
-//       where: { req.query },
-//         include: [
-//           { job_title: }
-//         ]}).then
-//       }
-//     })
-//
-// })
-
 //Create the Jobs
 app.post('/job_posts', function(req, res) {
   JobPost
@@ -88,6 +113,23 @@ app.post('/job_posts', function(req, res) {
       res.send(newPost);
     });
 });
+
+//create craigslist jobs after checking for uniqueness
+app.post('/craigs', function(req, res) {
+  if (!req.body.post_url){
+    console.log("no post_url, can't continue")
+  } else {
+    JobPost
+    .count({
+      where: {post_url: req.body.post_url}
+    }).then(function(count){
+      if (!count){
+        JobPost.create(req.body);
+      }
+    })
+  }
+});
+
 
 //Update the Jobs
 app.put('/job_posts/:id', function(req, res) {

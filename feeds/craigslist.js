@@ -1,6 +1,8 @@
 
 // calls craigslist rss query and parses rss feed
 // and adds new models to our db
+// will not run on Heroku due to Craigslist blocking AWS IP addresses
+// runs on smaller networks just fine
 
 var request 	= require('request'),
 	bodyParser  = require('body-parser'),
@@ -24,6 +26,7 @@ var queryArray = ['http://newyork.craigslist.org/search/sof?query=node.js+-senio
 'http://newyork.craigslist.org/search/sof?query=mySQL+-senior+-sr+-lead+-game+-mobile&format=rss',
 'http://newyork.craigslist.org/search/sof?query=web+application+-senior+-sr+-lead+-game+-mobile&format=rss',
 'http://newyork.craigslist.org/search/sof?query=ruby+on+rails+-senior+-sr+-lead+-game+-mobile&format=rss',
+'http://newyork.craigslist.org/search/sof?query=backbone+-senior+-sr+-lead+-game+-mobile&format=rss',
 'http://newyork.craigslist.org/search/sof?query="JSON"+-senior+-sr+-lead+-game+-mobile&format=rss',
 'http://newyork.craigslist.org/search/sof?query="REST"+-senior+-sr+-lead+-game+-mobile&format=rss'];
 
@@ -34,8 +37,13 @@ var queryArray = ['http://newyork.craigslist.org/search/sof?query=node.js+-senio
 
 module.exports =  {
 	queryNode: function() {
+		var min = 10000;
+		var max = 99999;
 		for (i = 0; i < queryArray.length; i++) {
-			request.get(queryArray[i], function(error, response, body){
+			var num = Math.floor(Math.random() * (max - min + 1)) + min;
+			var queryURL = queryArray[i] + '_=' + num;
+			console.log(queryURL);
+			request.get(queryURL, function(error, response, body){
 				xml2js.parseString(body, function (err, result) {
 	    	 		var resultsArray = result["rdf:RDF"].item;
 	    	 		if (resultsArray) {
